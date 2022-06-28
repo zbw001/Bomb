@@ -39,6 +39,6 @@ int main(int argc, char *argv[])
     //scenes["game"] = new GameScene();
     //scenes["over"] = new OverScene();
     scene_manager = new SceneManager();
-    
+    scene_manager->init();
     return a.exec();
 }

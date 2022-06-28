@@ -15,5 +15,6 @@ public:
     ~SceneManager();
     QGraphicsView* getView();
     void change_scene(std::string scene_name);
+    void init();
 };
 #endif

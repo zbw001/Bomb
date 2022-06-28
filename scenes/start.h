@@ -10,7 +10,7 @@
 #include "scene.h"
 
 class StartScene: public Scene {
-Q_OBJECT
+    Q_OBJECT
 public:
     StartScene();
     void enter();

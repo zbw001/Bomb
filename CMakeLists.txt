@@ -24,8 +24,9 @@ set(PROJECT_SOURCES
         scenes/scene.h
         scenes/start.h
         scenes/start.cpp
-        scenes/game.h
-        scenes/over.h
+        scenes/scene.cpp
+        scenes/SceneManager.cpp
+        scenes/SceneManager.h
         ${TS_FILES}
 )
 
