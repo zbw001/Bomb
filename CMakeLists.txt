@@ -21,6 +21,11 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        scenes/scene.h
+        scenes/start.h
+        scenes/start.cpp
+        scenes/game.h
+        scenes/over.h
         ${TS_FILES}
 )
 

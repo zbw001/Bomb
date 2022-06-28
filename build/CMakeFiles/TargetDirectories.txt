@@ -1,0 +1,4 @@
+/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/rebuild_cache.dir
+/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/edit_cache.dir
+/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/Bomb.dir
+/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/Bomb_autogen.dir

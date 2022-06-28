@@ -1,0 +1,171 @@
+{
+	"BUILD_DIR" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb",
+	"CMAKE_EXECUTABLE" : "/usr/local/Cellar/cmake/3.21.3/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/Users/zbw/大学/程设/大作业/Bomb/Bomb/CMakeLists.txt",
+		"/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/3.21.3/CMakeSystem.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Platform/Darwin-Initialize.cmake",
+		"/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/3.21.3/CMakeCXXCompiler.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeSystemSpecificInformation.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeGenericSystem.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeInitializeConfigs.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Platform/Darwin.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Platform/UnixPaths.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeCXXInformation.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeLanguageInformation.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Compiler/AppleClang-CXX.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Compiler/Clang.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Compiler/GNU.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/Platform/Apple-Clang.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeCommonLanguageInclude.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5/Qt5Config.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5/Qt5Config.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeParseArguments.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeParseArguments.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake",
+		"/Users/zbw/opt/anaconda3/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeParseArguments.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/game.h",
+			"MU",
+			"5QZZFROGDQ/moc_game.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/over.h",
+			"MU",
+			"5QZZFROGDQ/moc_over.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/scene.h",
+			"MU",
+			"5QZZFROGDQ/moc_scene.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/start.h",
+			"MU",
+			"5QZZFROGDQ/moc_start.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/Users/zbw/大学/程设/大作业/Bomb/Bomb/build",
+		"/Users/zbw/大学/程设/大作业/Bomb/Bomb",
+		"/Users/zbw/opt/anaconda3/include/qt",
+		"/Users/zbw/opt/anaconda3/include/qt/QtWidgets",
+		"/Users/zbw/opt/anaconda3/include/qt/QtGui",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers",
+		"/Users/zbw/opt/anaconda3/include/qt/QtCore",
+		"/Users/zbw/opt/anaconda3/mkspecs/macx-clang",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include",
+		"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include",
+		"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/clang++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/local/Cellar/cmake/3.21.3/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/Bomb_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/Users/zbw/opt/anaconda3/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/Users/zbw/opt/anaconda3/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/Bomb_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/Users/zbw/大学/程设/大作业/Bomb/Bomb/main.cpp", "MU", null ],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/start.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
