@@ -18,15 +18,34 @@ set(TS_FILES Bomb_zh_CN.ts)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        scenes/scene.h
+        items/tile_map.cpp
+        items/tile_map.h
+        items/sprite.cpp
+        items/sprite.h
+        items/HP_bar.cpp
+        items/HP_bar.h
+        items/bomb.cpp
+        items/bomb.h
+        scenes/game.h
+        scenes/game.cpp
         scenes/start.h
         scenes/start.cpp
+        scenes/game.h
+        scenes/game.cpp
+        scenes/over.h
+        scenes/over.cpp
+        scenes/scene_manager.cpp
+        scenes/scene_manager.h
+        scenes/scene.h
         scenes/scene.cpp
-        scenes/SceneManager.cpp
-        scenes/SceneManager.h
+        globals.h
+        globals.cpp
+        animation.h
+        animation.cpp
+        physics_manager.cpp
+        physics_manager.h
+        physics_object.h
+        physics_object.cpp
         ${TS_FILES}
 )
 

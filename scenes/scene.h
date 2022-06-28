@@ -2,11 +2,12 @@
 #define SCENE_H
 #include <QGraphicsScene>
 #include <QObject>
-
+#include "scene_manager.h"
 class Scene : public QGraphicsScene {
-    Q_OBJECT
-public:
-	Scene(QObject *parent);
-    virtual void enter() = 0;
+Q_OBJECT
+	public:
+		Scene(SceneManager *manager, QObject *parent=nullptr);
+	private:
+		SceneManager * manager;
 };
 #endif

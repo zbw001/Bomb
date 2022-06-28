@@ -3,13 +3,13 @@
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
 #include <QGraphicsView>
+#include <QPushButton>
 #include <QTimer>
 #include <QObject>
-#include "scene.h"
+#include "scene_manager.h"
 
-class OverScene: public Scene {
-Q_OBJECT
+class OverScene: public QGraphicsScene {
+    Q_OBJECT
 public:
-    OverScene();
-    void enter();
+    Q_INVOKABLE OverScene(SceneManager* manager);
 };

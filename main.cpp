@@ -1,21 +1,23 @@
-#include "mainwindow.h"
-#include "scenes/scene.h"
 #include "scenes/game.h"
 #include "scenes/over.h"
 #include "scenes/start.h"
-#include "scenes/SceneManager.h"
+#include "scenes/scene_manager.h"
 
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
-#include <string>
+#include <QString>
 #include <QGraphicsView>
-#include <map>
+#include <QMap>
 #include <QObject>
+#include <QFontDataBase>
+#include <QMetaObject>
+#define DEFINE_GLOBALS
+#include "globals.h"
+#include "physics_manager.h"
 
-std::map<std::string, Scene*> scenes;
-const std::string init_scene = "start";
-
+QMap<QString, QMetaObject> scenes;
+const QString init_scene = "start";
 
 
 /*
@@ -32,11 +34,17 @@ over -> 结束界面
 
 SceneManager * scene_manager;
 
-int main(int argc, char *argv[])
-{
+void load_fonts() {
+    int id = QFontDatabase::addApplicationFont("assets/像素Silver.ttf");
+    Fonts :: default_font_family = QFontDatabase::applicationFontFamilies(id).at(0);
+}
+
+int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    scenes["start"] = new StartScene();
-    //scenes["game"] = new GameScene();
+    load_fonts();
+    physics_manager = new PhysicsManager();
+    scenes["start"] = StartScene :: staticMetaObject;
+    scenes["game"] = GameScene :: staticMetaObject;
     //scenes["over"] = new OverScene();
     scene_manager = new SceneManager();
     scene_manager->init();

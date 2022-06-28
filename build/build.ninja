@@ -88,13 +88,45 @@ build CMakeFiles/Bomb.dir/main.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学
   OBJECT_DIR = CMakeFiles/Bomb.dir
   OBJECT_FILE_DIR = CMakeFiles/Bomb.dir
 
-build CMakeFiles/Bomb.dir/mainwindow.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/mainwindow.cpp || cmake_object_order_depends_target_Bomb
+build CMakeFiles/Bomb.dir/items/tile_map.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/items/tile_map.cpp || cmake_object_order_depends_target_Bomb
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/Bomb.dir/mainwindow.cpp.o.d
+  DEP_FILE = CMakeFiles/Bomb.dir/items/tile_map.cpp.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
   INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
   OBJECT_DIR = CMakeFiles/Bomb.dir
-  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/items
+
+build CMakeFiles/Bomb.dir/items/sprite.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/items/sprite.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/items/sprite.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/items
+
+build CMakeFiles/Bomb.dir/items/HP_bar.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/items/HP_bar.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/items/HP_bar.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/items
+
+build CMakeFiles/Bomb.dir/items/bomb.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/items/bomb.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/items/bomb.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/items
+
+build CMakeFiles/Bomb.dir/scenes/game.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/game.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/scenes/game.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/scenes
 
 build CMakeFiles/Bomb.dir/scenes/start.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/start.cpp || cmake_object_order_depends_target_Bomb
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
@@ -104,6 +136,62 @@ build CMakeFiles/Bomb.dir/scenes/start.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zb
   OBJECT_DIR = CMakeFiles/Bomb.dir
   OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/scenes
 
+build CMakeFiles/Bomb.dir/scenes/over.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/over.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/scenes/over.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/scenes
+
+build CMakeFiles/Bomb.dir/scenes/scene_manager.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/scene_manager.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/scenes/scene_manager.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/scenes
+
+build CMakeFiles/Bomb.dir/scenes/scene.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/scene.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/scenes/scene.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir/scenes
+
+build CMakeFiles/Bomb.dir/globals.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/globals.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/globals.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir
+
+build CMakeFiles/Bomb.dir/animation.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/animation.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/animation.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir
+
+build CMakeFiles/Bomb.dir/physics_manager.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/physics_manager.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/physics_manager.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir
+
+build CMakeFiles/Bomb.dir/physics_object.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zbw/大学/程设/大作业/Bomb/Bomb/physics_object.cpp || cmake_object_order_depends_target_Bomb
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Bomb.dir/physics_object.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17
+  INCLUDES = -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang
+  OBJECT_DIR = CMakeFiles/Bomb.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bomb.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Bomb
@@ -112,7 +200,7 @@ build CMakeFiles/Bomb.dir/scenes/start.cpp.o: CXX_COMPILER__Bomb_Debug /Users/zb
 #############################################
 # Link the executable Bomb.app/Contents/MacOS/Bomb
 
-build Bomb.app/Contents/MacOS/Bomb: CXX_EXECUTABLE_LINKER__Bomb_Debug CMakeFiles/Bomb.dir/Bomb_autogen/mocs_compilation.cpp.o CMakeFiles/Bomb.dir/main.cpp.o CMakeFiles/Bomb.dir/mainwindow.cpp.o CMakeFiles/Bomb.dir/scenes/start.cpp.o | /Users/zbw/opt/anaconda3/lib/libQt5Widgets.5.9.7.dylib /Users/zbw/opt/anaconda3/lib/libQt5Gui.5.9.7.dylib /Users/zbw/opt/anaconda3/lib/libQt5Core.5.9.7.dylib || Bomb_autogen
+build Bomb.app/Contents/MacOS/Bomb: CXX_EXECUTABLE_LINKER__Bomb_Debug CMakeFiles/Bomb.dir/Bomb_autogen/mocs_compilation.cpp.o CMakeFiles/Bomb.dir/main.cpp.o CMakeFiles/Bomb.dir/items/tile_map.cpp.o CMakeFiles/Bomb.dir/items/sprite.cpp.o CMakeFiles/Bomb.dir/items/HP_bar.cpp.o CMakeFiles/Bomb.dir/items/bomb.cpp.o CMakeFiles/Bomb.dir/scenes/game.cpp.o CMakeFiles/Bomb.dir/scenes/start.cpp.o CMakeFiles/Bomb.dir/scenes/over.cpp.o CMakeFiles/Bomb.dir/scenes/scene_manager.cpp.o CMakeFiles/Bomb.dir/scenes/scene.cpp.o CMakeFiles/Bomb.dir/globals.cpp.o CMakeFiles/Bomb.dir/animation.cpp.o CMakeFiles/Bomb.dir/physics_manager.cpp.o CMakeFiles/Bomb.dir/physics_object.cpp.o | /Users/zbw/opt/anaconda3/lib/libQt5Widgets.5.9.7.dylib /Users/zbw/opt/anaconda3/lib/libQt5Gui.5.9.7.dylib /Users/zbw/opt/anaconda3/lib/libQt5Core.5.9.7.dylib || Bomb_autogen
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   LINK_LIBRARIES = -Wl,-rpath,/Users/zbw/opt/anaconda3/lib  /Users/zbw/opt/anaconda3/lib/libQt5Widgets.5.9.7.dylib  /Users/zbw/opt/anaconda3/lib/libQt5Gui.5.9.7.dylib  /Users/zbw/opt/anaconda3/lib/libQt5Core.5.9.7.dylib
   OBJECT_DIR = CMakeFiles/Bomb.dir
@@ -125,7 +213,7 @@ build Bomb.app/Contents/MacOS/Bomb: CXX_EXECUTABLE_LINKER__Bomb_Debug CMakeFiles
 #############################################
 # Utility command for Bomb_autogen
 
-build Bomb_autogen: phony CMakeFiles/Bomb_autogen Bomb_autogen/mocs_compilation.cpp Bomb_autogen/include/ui_mainwindow.h
+build Bomb_autogen: phony CMakeFiles/Bomb_autogen Bomb_autogen/mocs_compilation.cpp
 
 
 #############################################
@@ -140,7 +228,7 @@ build ../Bomb_zh_CN.ts | ${cmake_ninja_workdir}../Bomb_zh_CN.ts: CUSTOM_COMMAND 
 #############################################
 # Custom command for CMakeFiles/Bomb_autogen
 
-build CMakeFiles/Bomb_autogen Bomb_autogen/mocs_compilation.cpp Bomb_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/Bomb_autogen ${cmake_ninja_workdir}Bomb_autogen/mocs_compilation.cpp ${cmake_ninja_workdir}Bomb_autogen/include/ui_mainwindow.h: CUSTOM_COMMAND
+build CMakeFiles/Bomb_autogen Bomb_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}CMakeFiles/Bomb_autogen ${cmake_ninja_workdir}Bomb_autogen/mocs_compilation.cpp: CUSTOM_COMMAND
   COMMAND = cd /Users/zbw/大学/程设/大作业/Bomb/Bomb/build && /usr/local/Cellar/cmake/3.21.3/bin/cmake -E cmake_autogen /Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/Bomb_autogen.dir/AutogenInfo.json Debug
   DESC = Automatic MOC and UIC for target Bomb
   restat = 1

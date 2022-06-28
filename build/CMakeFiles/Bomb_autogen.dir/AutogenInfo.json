@@ -71,9 +71,51 @@
 	"HEADERS" : 
 	[
 		[
-			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/mainwindow.h",
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/animation.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"EWIEGA46WW/moc_animation.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/globals.h",
+			"MU",
+			"EWIEGA46WW/moc_globals.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/HP_bar.h",
+			"MU",
+			"HU7TA6T7T7/moc_HP_bar.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/bomb.h",
+			"MU",
+			"HU7TA6T7T7/moc_bomb.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/sprite.h",
+			"MU",
+			"HU7TA6T7T7/moc_sprite.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/tile_map.h",
+			"MU",
+			"HU7TA6T7T7/moc_tile_map.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/physics_manager.h",
+			"MU",
+			"EWIEGA46WW/moc_physics_manager.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/physics_object.h",
+			"MU",
+			"EWIEGA46WW/moc_physics_object.cpp",
 			null
 		],
 		[
@@ -92,6 +134,12 @@
 			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/scene.h",
 			"MU",
 			"5QZZFROGDQ/moc_scene.cpp",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/scene_manager.h",
+			"MU",
+			"5QZZFROGDQ/moc_scene_manager.cpp",
 			null
 		],
 		[
@@ -151,9 +199,64 @@
 	"SETTINGS_FILE" : "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/CMakeFiles/Bomb_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/animation.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/globals.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/HP_bar.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/bomb.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/sprite.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/tile_map.cpp",
+			"MU",
+			null
+		],
 		[ "/Users/zbw/大学/程设/大作业/Bomb/Bomb/main.cpp", "MU", null ],
 		[
-			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/mainwindow.cpp",
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/physics_manager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/physics_object.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/game.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/over.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/scene.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/scene_manager.cpp",
 			"MU",
 			null
 		],

@@ -1,20 +1,20 @@
 #ifndef SCENE_MANAGER_H
 #define SCENE_MANAGER_H
 #include <QGraphicsScene>
-#include <QGraphicsRectItem>
 #include <QGraphicsView>
-#include <QTimer>
 #include <QObject>
-#include <string>
+#include <QString>
+
 class SceneManager : public QObject {
     Q_OBJECT
 private:
     QGraphicsView *view;
+	QGraphicsScene *current_scene;
 public:
     SceneManager();
     ~SceneManager();
     QGraphicsView* getView();
-    void change_scene(std::string scene_name);
+    void change_scene(QString scene_name);
     void init();
 };
 #endif

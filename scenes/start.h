@@ -7,13 +7,17 @@
 #include <QGraphicsView>
 #include <QTimer>
 #include <QObject>
+#include "../items/sprite.h"
 #include "scene.h"
+#include "scene_manager.h"
 
 class StartScene: public Scene {
     Q_OBJECT
 public:
-    StartScene();
-    void enter();
+    Q_INVOKABLE StartScene(SceneManager* manager);
+    ~StartScene();
+private:
+    Sprite* button;
 };
 
 #endif

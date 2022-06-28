@@ -1,2 +1,4 @@
 #include "scene.h"
-Scene::Scene(QObject *parent) : QGraphicsScene(parent){}
+Scene::Scene(SceneManager *manager, QObject *parent): QGraphicsScene(parent) {
+	this->manager = manager;
+}

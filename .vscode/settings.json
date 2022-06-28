@@ -79,7 +79,10 @@
         "qgraphicsrectitem": "cpp",
         "qtranslator": "cpp",
         "qdebug": "cpp",
-        "qgraphicsview": "cpp"
+        "qgraphicsview": "cpp",
+        "qgraphicsscene": "cpp",
+        "qtimer": "cpp",
+        "qgraphicspixmapitem": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
