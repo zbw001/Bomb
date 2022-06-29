@@ -6,14 +6,15 @@
 #include <QGraphicsItem>
 #include <QMap>
 #include <QPoint>
+#include <QPair>
 #include <QRectF>
 #include <QObject>
 
 class TileMap : public QObject, public QGraphicsItem {
 Q_OBJECT
 private:
-    QHash<QPoint, Sprite *> sprites;
-    QHash<QPoint, int> block_type;
+    QHash<QPair<int,int>, Sprite *> sprites;
+    QHash<QPair<int,int>, int> block_type;
 public:
     TileMap(QGraphicsItem *parent);
     ~TileMap();
