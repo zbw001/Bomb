@@ -16,6 +16,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
 set(TS_FILES Bomb_zh_CN.ts)
 
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g")
+
 set(PROJECT_SOURCES
         main.cpp
         items/tile_map.cpp
@@ -26,6 +28,8 @@ set(PROJECT_SOURCES
         items/HP_bar.h
         items/bomb.cpp
         items/bomb.h
+        items/character.cpp
+        items/character.h
         scenes/game.h
         scenes/game.cpp
         scenes/start.h
@@ -49,11 +53,26 @@ set(PROJECT_SOURCES
         ${TS_FILES}
 )
 
+set(CMAKE_AUTORCC ON)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Bomb
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
+    qt_add_resources(Bomb "assets"
+        PREFIX "/"
+        FILES
+            assets/像素Silver.ttf
+            assets/start_button.png
+            assets/blocks/dirt.png
+            assets/bomb/bomb.png
+            assets/character/idle.png
+            assets/character/hp_background.png
+            assets/character/hp_bar.png
+            assets/start_button.png
+    )
+    
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Bomb APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)

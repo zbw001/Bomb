@@ -1,7 +1,7 @@
 {
     "version": "2.0.0",
     "tasks": [
-        { 
+        {
             "label": "Build_dir",
             "command": "mkdir",
             "type": "shell",
@@ -16,7 +16,7 @@
             "command": "cmake",
             "args": [
                 "-DCMAKE_BUILD_TYPE=${input:CMAKE_BUILD_TYPE}",
-                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON", 
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
                 "../"
             ],
             "options": {
@@ -26,9 +26,6 @@
                 "Build_dir"
             ]
         },
-
-
-
         {
             "label": "Build",
             "group": "test",
@@ -52,15 +49,36 @@
         {
             "label": "Run",
             "type": "shell",
-            "group":"build",
-            
-            "command":"./${workspaceFolderBasename}",
+            "group": "build",
+            "command": "./${workspaceFolderBasename}",
             "options": {
                 "cwd": "${workspaceFolder}/build"
             },
-            "dependsOn":[
+            "dependsOn": [
                 "Build"
             ]
+        },
+        {
+            "type": "cmake",
+            "label": "CMake: build",
+            "command": "build",
+            "targets": [
+                "Bomb"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "CMake template build task"
+        },
+        {
+            "type": "cmake",
+            "label": "CMake: build",
+            "command": "build",
+            "targets": [
+                "Bomb"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "CMake template build task"
         }
     ],
     "inputs": [

@@ -8,6 +8,7 @@
 #include <vector>
 #include <QTimerEvent>
 #include <QList>
+#include <QObject>
 
 class PhysicsManager : public QObject {
 	Q_OBJECT

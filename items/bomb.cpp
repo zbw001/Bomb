@@ -1,7 +1,8 @@
 #include "../globals.h"
+#include "bomb.h"
 
 Bomb::Bomb(QGraphicsItem *parent, TileMap *tile_map) : 
-	Bomb(parent, "../" + Bomb_IMAGE, "", Bomb_WIDTH, Bomb_HEIGHT, true) {
+    Sprite(parent, *Animations::BOMB, true, false) {
 		this->tile_map = tile_map;
 	}
 

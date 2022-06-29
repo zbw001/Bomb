@@ -1,8 +1,9 @@
 #include "physics_manager.h"
 #include "globals.h"
+#include <QDebug>
 
 PhysicsManager::PhysicsManager() : QObject(nullptr) {
-	delta = 1000.0 / Consts::FPS;
+    delta = 1.0 / Consts::FPS;
 	timer = QObject::startTimer(1000 / Consts::FPS);
 }
 void PhysicsManager::addObject(PhysicsObject *object) {
@@ -17,7 +18,8 @@ void PhysicsManager::removeObject(PhysicsObject *object) {
 	objects.erase(objects.begin() + ind);
 }
 void PhysicsManager::timerEvent(QTimerEvent *event) {
-	for (auto object : objects) {
+    for (int i = 0; i < objects.length(); i++) {
+        PhysicsObject *object = objects[i];
 		if (object->isProcessEnabled()) {
 			object->process(delta);
 		}

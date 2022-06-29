@@ -13,15 +13,17 @@
 #include "../globals.h"
 
 StartScene::StartScene(SceneManager* manager) : Scene(manager) {
-    this->button = new Sprite(nullptr, Animations::START_BUTTON, false, "开始游戏");
+    //assert(Animations::START_BUTTON);
+    this->button = new Sprite(nullptr, *Animations::START_BUTTON, true, true, "开始游戏", Qt::black, QFont(Fonts::default_font_family, 16, QFont::Normal));
+    qDebug() << this->button->boundingRect();
     QObject::connect(this->button, &Sprite::mousePressed, [manager](QGraphicsSceneMouseEvent* e) {manager->change_scene("game");});
     button->setPos(350, 250);
     button->setFlag(QGraphicsRectItem::ItemIsFocusable);
     button->setFocus();
-    this->setSceneRect(0, 0, 800, 600);
+    this->setSceneRect(Consts::SCENE_RECT);
     this->addItem(button);
     QGraphicsView* view2 = manager->getView();
-    view2->setFixedSize(800, 600);
+    view2->setFixedSize(Consts::VIEW_WIDTH, Consts::VIEW_HEIGHT);
 }
 
 StartScene::~StartScene() {

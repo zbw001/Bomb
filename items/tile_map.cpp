@@ -1,114 +1,82 @@
 #include "tile_map.h"
-const int height=600;
-const int width=800;
-const int siz=10;//每个方块的大小
-TileMap::TileMap(){
-    main_map = new QGraphicsRectItem();
-    main_map->setRect(0,0,800,600);
-    for (int i=1;i<=width/siz;i++){
-        for (int j=1;j<=height/siz;j++){
-            vis[i][j]=0;
-            if (j==height/siz){
-                fmap[i][j]=new QGraphicsRectItem(main_map);
-                fmap[i][j]->setRect(0,0,10,10);
-                fmap[i][j]->setPos((i-1)*siz,(j-1)*siz);
-                //this->addItem(fmap[i][j]);
-                vis[i][j]=1;
+#include <QRectF>
+#include <QObject>
+#include <QtGlobal>
+
+QPainterPath TileMap::shape() const {
+    return QPainterPath();
+}
+
+TileMap::TileMap(QGraphicsItem *parent) : QGraphicsItem(parent) {
+    for (int i = 0; i < Consts::TILEMAP_WIDTH; i++) {
+        for (int j = 0; j < Consts::TILEMAP_HEIGHT; j++) {
+            sprites[QPoint(i, j)] = nullptr;
+            block_type[QPoint(i, j)] = -1;
+            if (j == 10) { 
+                setBlock(i, j, 0);
             }
         }
     }
-    //scene->addItem(main_map);
- //   this->setPixmap(QPixmap("blablabla"));//输入文件路径
 }
+
 TileMap::~TileMap(){
-    for (int i=1;i<=width/siz;i++){
-        for (int j=1;j<=height/siz;j++){
-            if (vis[i][j]){
-                delete(fmap[i][j]);
-                vis[i][j]=0;
-                //this->removeItem(fmap[i][j]);
-            }
-        }
+    foreach (Sprite* s, sprites) {
+        delete s;
     }
-    main_map->scene()->removeItem(main_map);
-    delete(main_map);
 }
-bool TileMap::check(QGraphicsRectItem* rect){
-    int fx1=rect->x(),fy1=rect->y(),fx2=rect->x()+50,fy2=rect->y()+50;
-    for (int i=1;i<=width/siz;i++){
-        for (int j=1;j<=height/siz;j++){
-            if (vis[i][j]){
-                int gx=(i-1)*siz,gy=(j-1)*siz;
-                if (gx>=fx1&&gx<=fx2&&gy>=fy1&&gy<=fy2) return true;
-                if (gx+siz>=fx1&&gx+siz<=fx2&&gy>=fy1&&gy<=fy2) return true;
-                if (gx>=fx1&&gx<=fx2&&gy+siz>=fy1&&gy+siz<=fy2) return true;
-                if (gx+siz>=fx1&&gx+siz<=fx2&&gy+siz>=fy1&&gy+siz<=fy2) return true;
-            }
-        }
-    }
-    return false;
+
+int TileMap::getBlock(int x, int y) {
+    assert(x >= 0 && x < Consts::TILEMAP_WIDTH);
+    assert(y >= 0 && y < Consts::TILEMAP_HEIGHT);
+    return block_type[QPoint(x, y)];
 }
-QGraphicsRectItem* TileMap::get_map(){
-    return main_map;
+
+void TileMap::setBlock(int x, int y, int b) {
+    assert(x >= 0 && x < Consts::TILEMAP_WIDTH);
+    assert(y >= 0 && y < Consts::TILEMAP_HEIGHT);
+    if (sprites[QPoint(x, y)]) delete sprites[QPoint(x, y)];
+    block_type[QPoint(x, y)] = b;
+    sprites[QPoint(x, y)] = new Sprite(static_cast<QGraphicsItem*>(this), *Animations::BLOCKS[b], true, false);
+    sprites[QPoint(x, y)]->setPos(x * Consts::BLOCK_SIZE, y * Consts::BLOCK_SIZE);
 }
-/*const int bomb_size;
-void TileMap::bomb(QGraphicsRectItem* rect){
-    int fx1=rect->x()-bomb_size,fy1=rect->y()-bomb_size,fx2=rect->x()+rect->width()+bomb_size,fy2=rect->y()+rect->height()+bomb_size;
-    for (int i=1;i<=width/siz;i++){
-        for (int j=1;j<=height/siz;j++){
-            if (vis[i][j]){
-                int gx=(i-1)*siz,gy=(j-1)*siz;
-                bool flag=false;
-                if (gx>=fx1&&gx<=fx2&&gy>=fy1&&gy<=fy2) flag=true;
-                if (gx+siz>=fx1&&gx+siz<=fx2&&gy>=fy1&&gy<=fy2) flag=true;
-                if (gx>=fx1&&gx<=fx2&&gy+siz>=fy1&&gy+siz<=fy2) flag=true;
-                if (gx+siz>=fx1&&gx+siz<=fx2&&gy+siz>=fy1&&gy+siz<=fy2) flag=true;
-                if (flag){
-                    delete(fmap[i][j]);
-                    vis[i][j]=0;
+
+bool TileMap::collides_with_rect(QRectF rect) {
+    int lx = rect.left(), rx = rect.right();
+    int ly = rect.top(), ry = rect.bottom();
+    for (int bx = qMax(0, lx / Consts::BLOCK_SIZE - 2); bx <= rx / Consts::BLOCK_SIZE + 2; bx++) {
+        for (int by = qMax(0, ly / Consts::BLOCK_SIZE - 2); by <= ry / Consts::BLOCK_SIZE + 2; by++) {
+            if (block_type[QPoint(bx, by)] != -1) {
+                if (sprites[QPoint(bx, by)]->boundingRect().intersects(rect)) {
+                    return true;
                 }
             }
         }
-    }    
-}
-*/
-int min(int x,int y) {
-    return x<y?x:y;
+    }
+    return false;
 }
 
-int max(int x,int y) {
-    return x>y?x:y;
-}
-
-bool TileMap::collides_with_rect(QGraphicsRectItem *rect) {
-    int lx=rect->x(),rx=rect->x()+rect->width();
-    int ly=rect->y(),ry=rect->y()+rect->height();
-    for(int i=1;i<=width/siz;i++) {
-        for(int j=1;j<=height/siz;j++) {
-            if(vis[i][j]) {
-                int gx=(i-1)*siz,gy=(j-1)*siz;
-                bool flag=false;
-                if(max(lx,gx)<=min(rx,gx+siz)&&max(ly,gy)<=min(ry,gy+siz)) return true;
-                if(flag) return true;
+bool TileMap::is_on_ground(QRectF rect) {
+    int lx = rect.left(), rx = rect.right();
+    int ly = rect.top(), ry = rect.bottom();
+    for (int bx = qMax(0, lx / Consts::BLOCK_SIZE - 2); bx <= rx / Consts::BLOCK_SIZE + 2; bx++) {
+        for (int by = qMax(0, ly / Consts::BLOCK_SIZE - 2); by <= ry / Consts::BLOCK_SIZE + 2; by++) {
+            if (block_type[QPoint(bx, by)] != -1) {
+                if ((sprites[QPoint(bx, by)]->boundingRect().top() - rect.bottom() < Consts::EPS)) {
+                    if (qMin(sprites[QPoint(bx, by)]->boundingRect().right(), rect.right()) - qMax(sprites[QPoint(bx, by)]->boundingRect().left(), rect.left()) > Consts::EPS)
+                        return true;
+                }
             }
         }
     }
     return false;
 }
 
-bool TileMap::is_on_ground(QGraphicsRectItem *rect) {
-    return this->collides_with_rect(rect);
-/*    int lx=rect->x(),rx=rect->x()+rect->width();
-    int ly=rect->y(),ry=rect->y()+rect->height();
-    for(int i=1;i<=width/siz;i++) {
-        for(int j=1;j<=height/siz;j++) {
-            if(vis[i][j]) {
-                int gx=(i-1)*siz,gy=(j-1)*siz;
-                bool flag=false;
-                
-                if(flag) return true;
-            }
-        }
-    }
-    return false;*/
+QRectF TileMap::boundingRect() const {
+    return QRectF(0, 0, Consts::TILEMAP_WIDTH * Consts::BLOCK_SIZE, Consts::TILEMAP_HEIGHT * Consts::BLOCK_SIZE);
+}
+
+void TileMap::paint(QPainter *painter,
+                          const QStyleOptionGraphicsItem *option,
+                          QWidget *widget) {
+    return;
 }

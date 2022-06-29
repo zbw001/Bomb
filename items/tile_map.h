@@ -1,18 +1,29 @@
 #ifndef TILEMAP_H
 #define TILEMAP_H
-#include<QGraphicsPixmapItem>
-#include<QGraphicsRectItem>
-class TileMap{
+
+#include "sprite.h"
+#include "../globals.h"
+#include <QGraphicsItem>
+#include <QMap>
+#include <QPoint>
+#include <QRectF>
+#include <QObject>
+
+class TileMap : public QObject, public QGraphicsItem {
+Q_OBJECT
 private:
-    QGraphicsRectItem *fmap[105][105];
+    QHash<QPoint, Sprite *> sprites;
+    QHash<QPoint, int> block_type;
 public:
-    QGraphicsRectItem *main_map;
-    int vis[105][105];
-    TileMap();
+    TileMap(QGraphicsItem *parent);
     ~TileMap();
-    bool check(QGraphicsRectItem* rect);
-    QGraphicsRectItem* get_map();
-    bool collides_with_rect(QGraphicsRectItem *rect);
-    bool is_on_ground(QGraphicsRectItem *rect);
+    bool collides_with_rect(QRectF rect);
+    bool is_on_ground(QRectF rect);
+    QPainterPath shape() const override;
+    int getBlock(int x, int y);
+    void setBlock(int x, int y, int b);
+    QRectF boundingRect() const override;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 };
+
 #endif

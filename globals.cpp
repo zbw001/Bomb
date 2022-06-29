@@ -1,5 +1,7 @@
 #include "globals.h"
 #include <QSize>
+#include <QMap>
+#include <QRect>
 
 namespace Fonts {
 	QString default_font_family;
@@ -15,12 +17,34 @@ namespace Consts {
 	const int MAX_HP = 100;
 	const int START_BUTTON_WIDTH = 190;
 	const int START_BUTTON_HEIGHT = 49;
+	const int TILEMAP_WIDTH = 400;
+	const int TILEMAP_HEIGHT = 200;
+	const int HPBAR_WIDTH = 64;
+	const int HPBAR_HEIGHT = 17;
+	const int BLOCK_SIZE = 64;
+	const double EPS = 0.01;
+	const int VIEW_WIDTH = 1600;
+	const int VIEW_HEIGHT = 900;
+	const QRect SCENE_RECT(-3200, -1800, 6400, 3600);
+	const int GRAVITY = 10;
 }
 
 namespace Animations {
-    Animation* CHARACTER_IDLE = new Animation("assets/character/idle.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
-    Animation* BOMB = new Animation("assets/bomb/bomb.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
-	Animation* START_BUTTON = new Animation("/assets/start_button.png", QSize(Consts::START_BUTTON_WIDTH, Consts::START_BUTTON_HEIGHT));
+    Animation* CHARACTER_IDLE = nullptr;
+    Animation* BOMB = nullptr;
+    Animation* START_BUTTON = nullptr;
+    Animation* HPBAR_BACKGROUND = nullptr;
+    Animation* HPBAR_BAR = nullptr;
+    Animation* BLOCKS[] = {
+        nullptr
+    };
 }
+
+namespace Scenes {
+    QMap<QString, QMetaObject> scenes;
+    const QString init_scene = "start";
+}
+
+
 
 

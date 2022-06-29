@@ -15,9 +15,8 @@
 #define DEFINE_GLOBALS
 #include "globals.h"
 #include "physics_manager.h"
+#include <QFileInfo>
 
-QMap<QString, QMetaObject> scenes;
-const QString init_scene = "start";
 
 
 /*
@@ -34,19 +33,30 @@ over -> 结束界面
 
 SceneManager * scene_manager;
 
-void load_fonts() {
-    int id = QFontDatabase::addApplicationFont("assets/像素Silver.ttf");
+void loadFonts() {
+    int id = QFontDatabase::addApplicationFont(":/assets/像素Silver.ttf");
     Fonts :: default_font_family = QFontDatabase::applicationFontFamilies(id).at(0);
+}
+
+void loadAnimations() {
+    Animations::CHARACTER_IDLE = new Animation(":/assets/character/idle.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
+    Animations::BOMB = new Animation(":/assets/bomb/bomb.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
+    Animations::START_BUTTON = new Animation(":/assets/start_button.png", QSize(Consts::START_BUTTON_WIDTH, Consts::START_BUTTON_HEIGHT));
+    Animations::HPBAR_BACKGROUND = new Animation(":/assets/character/hp_background.png", QSize(Consts::HPBAR_WIDTH, Consts::HPBAR_HEIGHT));
+    Animations::HPBAR_BAR = new Animation(":/assets/character/hp_bar.png", QSize(Consts::HPBAR_WIDTH, Consts::HPBAR_HEIGHT));
+    Animations::BLOCKS[0] = new Animation(":/assets/blocks/dirt.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
 }
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-    load_fonts();
+    loadFonts();
+    loadAnimations();
     physics_manager = new PhysicsManager();
-    scenes["start"] = StartScene :: staticMetaObject;
-    scenes["game"] = GameScene :: staticMetaObject;
-    //scenes["over"] = new OverScene();
+    Scenes::scenes["start"] = StartScene :: staticMetaObject;
+    Scenes::scenes["game"] = GameScene :: staticMetaObject;
+    Scenes::scenes["over"] = OverScene :: staticMetaObject;
     scene_manager = new SceneManager();
+    //assert(Animations::START_BUTTON);
     scene_manager->init();
     return a.exec();
 }

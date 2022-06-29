@@ -6,10 +6,11 @@
 #include <QPainter>
 #include <QGraphicsItem>
 
-class Bomb : public ImageRect, public PhysicsObject {
+class Bomb : public Sprite, public PhysicsObject {
+Q_OBJECT
 public:
     Bomb(QGraphicsItem *parent, TileMap* tile_map);
-	void process(double delta);
+	void process(double delta) override;
 	QPointF velocity;
 	QPainterPath shape() const override;
 	

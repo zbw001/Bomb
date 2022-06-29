@@ -1,16 +1,15 @@
-#include "../consts.h"
+#include "../globals.h"
 #include "HP_bar.h"
 
 HPBar::HPBar(QGraphicsItem * parent) : 
-	ImageRect(parent, "../" + HPBAR_BACKGROUND_IMAGE, "", HPBAR_WIDTH, HPBAR_HEIGHT, false) {
-	Bar = new ImageRect(this, "../" + HPBAR_BAR_IMAGE, "", HPBAR_WIDTH, HPBAR_HEIGHT, false);
+    Sprite(parent, *Animations::HPBAR_BACKGROUND, false, false) {
+    bar = new Sprite(this, *Animations::HPBAR_BAR, false, false);
 }
 
 HPBar::~HPBar() {
-	delete Bar;
+	delete bar;
 }
 
 void HPBar::setHP(int HP) {
-	bool implemented = false;
-	assert(implemented);
+    bar->setScale(double(HP) / Consts::MAX_HP);
 }
