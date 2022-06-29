@@ -6,6 +6,7 @@
 #include "tile_map.h"
 #include <QString>
 #include <QMap>
+#include <QObject>
 
 class Character : public Sprite, public PhysicsObject {
 Q_OBJECT

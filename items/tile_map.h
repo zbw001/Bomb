@@ -10,6 +10,7 @@
 #include <QRectF>
 #include <QObject>
 
+
 class TileMap : public QObject, public QGraphicsItem {
 Q_OBJECT
 private:

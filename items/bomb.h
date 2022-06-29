@@ -5,6 +5,7 @@
 #include <QPointF>
 #include <QPainter>
 #include <QGraphicsItem>
+#include <QObject>
 
 class Bomb : public Sprite, public PhysicsObject {
 Q_OBJECT
