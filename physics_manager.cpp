@@ -7,6 +7,7 @@ PhysicsManager::PhysicsManager() : QObject(nullptr) {
 	timer = QObject::startTimer(1000 / Consts::FPS);
 }
 void PhysicsManager::addObject(PhysicsObject *object) {
+    //qDebug() << "add" << object;
 	objects.push_back(object);
 }
 void PhysicsManager::removeObject(PhysicsObject *object) {
@@ -18,10 +19,12 @@ void PhysicsManager::removeObject(PhysicsObject *object) {
 	objects.erase(objects.begin() + ind);
 }
 void PhysicsManager::timerEvent(QTimerEvent *event) {
+    //qDebug() << "process~";
     for (int i = 0; i < objects.length(); i++) {
         PhysicsObject *object = objects[i];
 		if (object->isProcessEnabled()) {
 			object->process(delta);
+            //qDebug() << "调用人物 process";
 		}
 	}
 }

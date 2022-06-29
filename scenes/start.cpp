@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <QDebug>
 #include <QPixmap>
+#include <QRect>
 #include "scene_manager.h"
 #include "items/sprite.h"
 #include "../globals.h"
@@ -20,10 +21,9 @@ StartScene::StartScene(SceneManager* manager) : Scene(manager) {
     button->setPos(350, 250);
     button->setFlag(QGraphicsRectItem::ItemIsFocusable);
     button->setFocus();
-    this->setSceneRect(Consts::SCENE_RECT);
+    this->setSceneRect(QRect(0, 0, 1600, 900));
     this->addItem(button);
-    QGraphicsView* view2 = manager->getView();
-    view2->setFixedSize(Consts::VIEW_WIDTH, Consts::VIEW_HEIGHT);
+    manager->getView()->setSceneRect(this->sceneRect());
 }
 
 StartScene::~StartScene() {

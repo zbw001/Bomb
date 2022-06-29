@@ -9,8 +9,8 @@ namespace Fonts {
 
 namespace Consts {
 	const int FPS = 60;
-	const int CHARACTER_WIDTH = 192;
-	const int CHARACTER_HEIGHT = 256;
+    const int CHARACTER_WIDTH = int(192/2.3);
+    const int CHARACTER_HEIGHT = int(256/2.3);
 	const int BOMB_WIDTH = 128;
 	const int BOMB_HEIGHT = 128;
 	const int BOMB_RADIUS = 64;
@@ -22,11 +22,10 @@ namespace Consts {
 	const int HPBAR_WIDTH = 64;
 	const int HPBAR_HEIGHT = 17;
 	const int BLOCK_SIZE = 64;
-	const double EPS = 0.01;
+    const double EPS = 5;
 	const int VIEW_WIDTH = 1600;
 	const int VIEW_HEIGHT = 900;
-	const QRect SCENE_RECT(-3200, -1800, 6400, 3600);
-	const int GRAVITY = 10;
+    const int GRAVITY = 1200;
 }
 
 namespace Animations {

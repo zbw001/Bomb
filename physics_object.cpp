@@ -1,6 +1,6 @@
 #include "physics_manager.h"
 
-PhysicsObject::PhysicsObject() {
+PhysicsObject::PhysicsObject() : enabled(true) {
 	physics_manager->addObject(this);
 }
 

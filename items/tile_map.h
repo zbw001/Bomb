@@ -20,7 +20,7 @@ public:
     TileMap(QGraphicsItem *parent);
     ~TileMap();
     bool collides_with_rect(QRectF rect);
-    bool is_on_ground(QRectF rect);
+    double dis_to_ground(QRectF rect);
     QPainterPath shape() const override;
     int getBlock(int x, int y);
     void setBlock(int x, int y, int b);

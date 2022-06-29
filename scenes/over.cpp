@@ -10,7 +10,7 @@
 
 
 OverScene::OverScene(SceneManager* manager) : Scene(manager) {
-	this->setSceneRect(Consts::SCENE_RECT);
+	this->setSceneRect(QRect(0, 0, 1600, 900));
     
     
     button = new Sprite(nullptr, *Animations::START_BUTTON, true, true, "重新开始");
@@ -19,7 +19,5 @@ OverScene::OverScene(SceneManager* manager) : Scene(manager) {
     button->setFocus();
     QObject::connect(button, &Sprite::mousePressed, [manager](QGraphicsSceneMouseEvent* e) {manager->change_scene("start");});
     this->addItem(button);
-
-    QGraphicsView* view2 = manager->getView();
-    view2->setFixedSize(Consts::VIEW_WIDTH, Consts::VIEW_HEIGHT);
+    manager->getView()->setSceneRect(this->sceneRect());
 }

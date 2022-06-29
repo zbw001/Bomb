@@ -10,13 +10,12 @@
 #include <QGraphicsView>
 #include <QMap>
 #include <QObject>
-#include <QFontDataBase>
 #include <QMetaObject>
 #define DEFINE_GLOBALS
 #include "globals.h"
 #include "physics_manager.h"
 #include <QFileInfo>
-
+#include <QFontDatabase>
 
 
 /*

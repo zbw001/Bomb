@@ -25,7 +25,6 @@ namespace Consts {
 	extern const int HPBAR_HEIGHT;
 	extern const int VIEW_WIDTH;
 	extern const int VIEW_HEIGHT;
-	extern const QRect SCENE_RECT;
 	extern const int GRAVITY;
 }
 
