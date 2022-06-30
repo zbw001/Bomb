@@ -26,7 +26,7 @@ void SceneManager::change_scene(QString scene_name) {
     current_scene = qobject_cast<QGraphicsScene*>(Scenes::scenes[scene_name].newInstance(Q_ARG(SceneManager*, this)));
     view->setScene(current_scene);
     //view->setSceneRect(current_scene->sceneRect());
-    if (old) delete old;
+    if (old) old->deleteLater();
 }
 QGraphicsView* SceneManager::getView() {
 	return view;
