@@ -10,7 +10,7 @@ Character::Character(QGraphicsItem *parent, TileMap *tile_map) :
 	{
 		this->tile_map = tile_map;
 		HP_bar = new HPBar(this);
-        HP_bar->setPos(QPointF(7, 0));
+        HP_bar->setPos(QPointF(5, 0));
         setHP(Consts::MAX_HP);
         setData(0, QVariant("character"));
         dead = false;

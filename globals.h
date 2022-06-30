@@ -21,8 +21,10 @@ namespace Consts {
 	extern const int TILEMAP_HEIGHT;
 	extern const int BLOCK_SIZE;
 	extern const double EPS;
-	extern const int HPBAR_WIDTH;
-	extern const int HPBAR_HEIGHT;
+    extern const int HPBAR_BACKGROUND_WIDTH;
+    extern const int HPBAR_BACKGROUND_HEIGHT;
+    extern const int HPBAR_BAR_WIDTH;
+    extern const int HPBAR_BAR_HEIGHT;
 	extern const int VIEW_WIDTH;
 	extern const int VIEW_HEIGHT;
 	extern const int GRAVITY;

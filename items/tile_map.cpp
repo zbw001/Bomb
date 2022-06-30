@@ -12,7 +12,7 @@ QPainterPath TileMap::shape() const {
 TileMap::TileMap(QGraphicsItem *parent) : QGraphicsItem(parent) {
     for (int i = 0; i < Consts::TILEMAP_WIDTH; i++) {
         for (int j = 0; j < Consts::TILEMAP_HEIGHT; j++) {
-            if (j == 40) {
+            if (j == 27) {
                 setBlock(i, j, 1);
             }
         }

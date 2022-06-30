@@ -5,7 +5,7 @@
 HPBar::HPBar(QGraphicsItem * parent) : 
     Sprite(parent, *Animations::HPBAR_BACKGROUND, false) {
     bar = new Sprite(this, *Animations::HPBAR_BAR, false);
-	//bar->setPos(QPointF(0, 0));
+    bar->setPos(QPointF(Consts::HPBAR_BACKGROUND_WIDTH - Consts::HPBAR_BAR_WIDTH, 0));
 }
 
 HPBar::~HPBar() {
