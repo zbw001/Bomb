@@ -51,6 +51,10 @@ namespace Animations {
     Animation* CHARACTER_IDLE = nullptr;
     Animation* CHARACTER_DIE = nullptr;
     Animation* BOMB = nullptr;
+    Animation* BOMB2 =nullptr;
+    Animation* BOMB3 =nullptr;
+    Animation* SELECT_BOMB = nullptr;
+    Animation* BOMB_PASS = nullptr;
     Animation* START_BUTTON = nullptr;
     Animation* HPBAR_BACKGROUND = nullptr;
     Animation* HPBAR_BAR = nullptr;

@@ -18,7 +18,7 @@
 #include "../items/character.h"
 #include "../items/bomb.h"
 #include "../physics_object.h"
-
+#include "../items/props.h"
 enum GameState {
     WAITING_FOR_PLAYER_MOVE,
     WAITING_FOR_PLAYER_BOMB,
@@ -29,6 +29,7 @@ enum GameState {
 class GameScene: public Scene, PhysicsObject {
     Q_OBJECT
 private:
+    Ui * ui;
     QGraphicsItemGroup* cursor_indicator;
     GameState state;
     TileMap* tile_map;

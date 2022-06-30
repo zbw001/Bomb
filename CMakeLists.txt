@@ -30,6 +30,8 @@ set(PROJECT_SOURCES
         items/bomb.h
         items/character.cpp
         items/character.h
+        items/props.cpp
+        items/props.h
         scenes/game.h
         scenes/game.cpp
         scenes/start.h
@@ -69,6 +71,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             assets/start_button.png
             assets/blocks/dirt.png
             assets/bomb/bomb.png
+            assets/bomb/bomb2.png
+            assets/bomb/bomb3.png
+            assets/bomb/select_bomb.png
             assets/character/idle.png
             assets/character/down.png
             assets/character/slide.png

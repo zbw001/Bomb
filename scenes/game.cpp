@@ -16,7 +16,7 @@
 #include "../items/tile_map.h"
 #include "../items/character.h"
 #include "../globals.h"
-
+#include "../items/props.h"
 Bomb* GameScene::createBomb(QGraphicsItem* character) {
     Bomb* bomb = new Bomb(nullptr, tile_map, character);
     QObject::connect(bomb, &Bomb::exploded, this, &GameScene::bombExploded);
@@ -174,6 +174,8 @@ GameScene::GameScene(SceneManager* manager) : Scene(manager) {
     this->background->setPos((QPointF(Consts::GAME_SCENE_WIDTH, Consts::GAME_SCENE_HEIGHT) - QPointF(Consts::BACKGROUND_WIDTH, Consts::BACKGROUND_HEIGHT)) / 2);
     this->addItem(background);
     this->addItem(tile_map);
+    this->ui = new Ui(nullptr);
+    this->addItem(ui);
 	for (int player_id = 0; player_id < Consts::NUM_PLAYERS; player_id++) {
 		for (int character_id = 0; character_id < Consts::NUM_CHARACTERS_PER_PLAYER; character_id ++) {
             characters[player_id][character_id] = new Character(nullptr, tile_map, player_id, character_id);

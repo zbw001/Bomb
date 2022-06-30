@@ -54,6 +54,10 @@ namespace Animations {
 	extern Animation* CHARACTER_IDLE;
     extern Animation* CHARACTER_DIE;
 	extern Animation* BOMB ;
+    extern Animation* BOMB2;
+    extern Animation* BOMB3 ;
+    extern Animation* SELECT_BOMB;
+    extern Animation* BOMB_PASS;
 	extern Animation* START_BUTTON;
 	extern Animation* HPBAR_BACKGROUND;
 	extern Animation* HPBAR_BAR;

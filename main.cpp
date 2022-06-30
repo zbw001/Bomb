@@ -41,6 +41,10 @@ void loadAnimations() {
     Animations::CHARACTER_IDLE = new Animation(":/assets/character/idle.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
     Animations::CHARACTER_DIE = new Animation(2, false);
     Animations::BOMB = new Animation(":/assets/bomb/bomb.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
+    Animations::BOMB2 = new Animation(":/assets/bomb/bomb2.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
+    Animations::BOMB3 = new Animation(":/assets/bomb/bomb3.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
+    Animations::SELECT_BOMB= new Animation(":/assets/bomb/select_bomb.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
+    Animations::BOMB_PASS= new Animation(":/assets/bomb/pass.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
     Animations::START_BUTTON = new Animation(":/assets/start_button.png", QSize(Consts::START_BUTTON_WIDTH, Consts::START_BUTTON_HEIGHT));
     Animations::HPBAR_BACKGROUND = new Animation(":/assets/character/hp_background.png", QSize(Consts::HPBAR_BACKGROUND_WIDTH, Consts::HPBAR_BACKGROUND_HEIGHT));
     Animations::HPBAR_BAR = new Animation(":/assets/character/hp_bar.png", QSize(Consts::HPBAR_BAR_WIDTH, Consts::HPBAR_BAR_HEIGHT));
