@@ -12,7 +12,7 @@
 class Character : public Sprite, public PhysicsObject {
 Q_OBJECT
 public:
-    Character(QGraphicsItem *parent, TileMap* tile_map);
+    Character(QGraphicsItem *parent, TileMap* tile_map, int player_id, int character_id);
 	~Character();
 	void process(double delta);
 	QPointF velocity;
@@ -23,6 +23,7 @@ public:
     bool isDead();
     void setCurrent(bool current);
 private:
+    int player_id, character_id;
     Sprite *mark;
     bool dead;
     bool current;

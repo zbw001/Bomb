@@ -1,6 +1,12 @@
 #include "animation.h"
 #include <QDebug>
 #include <QRect>
+#include <QPixmap>
+#include <QBitmap>
+#include <QImage>
+#include <QColor>
+#include <QPainter>
+#include <QtGlobal>
 
 Animation::Animation(int fps, bool repeat) {
 	this->fps = fps;
@@ -30,10 +36,16 @@ Animation Animation::crop(int width, int height) {
 }
 
 
-Animation Animation::setColor(int width, int height) {
+Animation Animation::setColor(QColor color) {
     Animation ret(*this);
     for (int i = 0; i < ret.length(); i++) {
-        ret[i] = ret[i].copy(QRect(0, 0, width, height));
+        QPixmap pix = QPixmap(ret[i]);
+        QBitmap mask = pix.createHeuristicMask();
+        QPainter p(&pix);
+        p.setPen(color);
+        p.drawPixmap(pix.rect(), mask, mask.rect());
+        p.end();
+        ret[i] = pix;
     }
     return ret;
 }

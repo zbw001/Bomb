@@ -176,7 +176,7 @@ GameScene::GameScene(SceneManager* manager) : Scene(manager) {
     this->addItem(tile_map);
 	for (int player_id = 0; player_id < Consts::NUM_PLAYERS; player_id++) {
 		for (int character_id = 0; character_id < Consts::NUM_CHARACTERS_PER_PLAYER; character_id ++) {
-			characters[player_id][character_id] = new Character(nullptr, tile_map);
+            characters[player_id][character_id] = new Character(nullptr, tile_map, player_id, character_id);
             QPoint p = QPoint(700 + character_id * 100, 300);
             if (player_id == 0) p.setX(- p.x());
             p = p + QPoint(Consts::GAME_SCENE_WIDTH / 2, Consts::GAME_SCENE_HEIGHT / 2);

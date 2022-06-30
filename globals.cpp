@@ -8,7 +8,7 @@ namespace Fonts {
 }
 
 namespace Consts {
-    const int FPS = 60;
+    const int FPS = 120;
     const int CHARACTER_WIDTH = int(192/2.5);
     const int CHARACTER_HEIGHT = int(256/2.5);
     const int BOMB_WIDTH = 48;

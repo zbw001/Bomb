@@ -5,11 +5,14 @@
 #include <QtGlobal>
 #include <QGraphicsScene>
 
-Character::Character(QGraphicsItem *parent, TileMap *tile_map) : 
+Character::Character(QGraphicsItem *parent, TileMap *tile_map, int player_id, int character_id) :
     Sprite(parent, {{"idle", *Animations::CHARACTER_IDLE}, {"die", *Animations::CHARACTER_DIE}}, "idle", false)
 	{
+        this->player_id = player_id;
+        this->character_id = character_id;
 		this->tile_map = tile_map;
-        this->mark = new Sprite(this, *Animations::MARK, false);
+        if (player_id == 0) this->mark = new Sprite(this, Animations::MARK->setColor(Qt::blue), false);
+        else this->mark = new Sprite(this, Animations::MARK->setColor(Qt::red), false);
         this->mark->setPos(QPointF((Consts::CHARACTER_WIDTH - Consts::MARK_SIZE) / 2.0, -Consts::MARK_SIZE / 2.0 - 25));
         this->mark->setOpacity(0.3);
 		HP_bar = new HPBar(this);

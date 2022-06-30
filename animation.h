@@ -3,6 +3,7 @@
 #include <QObject>
 #include <QList>
 #include <QPixmap>
+#include <QColor>
 
 class Animation : public QList<QPixmap> {
 public:
@@ -12,5 +13,6 @@ public:
 	int fps;
 	bool repeat;
     Animation crop(int width, int height);
+    Animation setColor(QColor color);
 };
 #endif
