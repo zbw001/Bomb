@@ -12,10 +12,8 @@ QPainterPath TileMap::shape() const {
 TileMap::TileMap(QGraphicsItem *parent) : QGraphicsItem(parent) {
     for (int i = 0; i < Consts::TILEMAP_WIDTH; i++) {
         for (int j = 0; j < Consts::TILEMAP_HEIGHT; j++) {
-            sprites[QPair<int,int>(i, j)] = nullptr;
-            block_type[QPair<int,int>(i, j)] = -1;
-            if (j == 50) {
-                setBlock(i, j, 0);
+            if (j == 40) {
+                setBlock(i, j, 1);
             }
         }
     }
@@ -39,7 +37,7 @@ void TileMap::setBlock(int x, int y, int b) {
     if (sprites[QPair<int,int>(x, y)]) delete sprites[QPair<int,int>(x, y)];
     block_type[QPair<int,int>(x, y)] = b;
     sprites[QPair<int,int>(x, y)] = nullptr;
-    if (b != -1) {
+    if (b) {
         sprites[QPair<int,int>(x, y)] = new Sprite(static_cast<QGraphicsItem*>(this), *Animations::BLOCKS[b], false);
         sprites[QPair<int,int>(x, y)]->setData(0, QVariant("block"));
         sprites[QPair<int,int>(x, y)]->setPos(x * Consts::BLOCK_SIZE, y * Consts::BLOCK_SIZE);
@@ -51,7 +49,7 @@ bool TileMap::collides_with_rect(QRectF rect) {
     double ly = rect.top(), ry = rect.bottom();
     for (int bx = qMax(0, int (lx / Consts::BLOCK_SIZE - 2)); bx <= rx / Consts::BLOCK_SIZE + 2; bx++) {
         for (int by = qMax(0, int (ly / Consts::BLOCK_SIZE - 2)); by <= ry / Consts::BLOCK_SIZE + 2; by++) {
-            if (block_type[QPair<int,int>(bx, by)] != -1) {
+            if (block_type[QPair<int,int>(bx, by)]) {
                 if (sprites[QPair<int,int>(bx, by)]->sceneBoundingRect().intersects(rect)) {
                     //qDebug() << rect << " " << sprites[QPair<int,int>(bx, by)]->sceneBoundingRect();
                     return true;
@@ -70,8 +68,9 @@ double TileMap::dis_to_ground(QRectF rect) {
 
     for (int bx = qMax(0, int (lx / Consts::BLOCK_SIZE - 2)); bx <= rx / Consts::BLOCK_SIZE + 2; bx++) {
         for (int by = qMax(0, int (ly / Consts::BLOCK_SIZE - 2)); by <= ry / Consts::BLOCK_SIZE + 2; by++) {
-            if (block_type[QPair<int,int>(bx, by)] != -1) {
+            if (block_type[QPair<int,int>(bx, by)]) {
                 //qDebug() << bx << " " << by;
+                //qDebug() << (sprites[QPair<int,int>(bx, by)] != nullptr);
                 QRectF brect = sprites[QPair<int,int>(bx, by)]->sceneBoundingRect();
                 //qDebug() <<sprites[QPair<int,int>(bx, by)]->sceneBoundingRect();
                 if (qAbs(brect.top() - rect.bottom()) < Consts::EPS) {
@@ -81,7 +80,7 @@ double TileMap::dis_to_ground(QRectF rect) {
             }
         }
     }
-    qDebug() << ret;
+    //qDebug() << ret;
     return ret;
 }
 

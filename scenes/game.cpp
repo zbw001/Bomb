@@ -46,15 +46,15 @@ QPair<int,int> _next(QPair<int,int> pi) {
 }
 
 GameScene::GameScene(SceneManager* manager) : Scene(manager) {
-    this->setSceneRect(QRect(0, 0, 6400, 3600));
+    this->setSceneRect(QRect(- Consts::GAME_SCENE_WIDTH * 0.5, - Consts::GAME_SCENE_HEIGHT * 0.5, Consts::GAME_SCENE_WIDTH * 2, Consts::GAME_SCENE_HEIGHT * 2));
 	this->tile_map = new TileMap(nullptr);
     this->addItem(tile_map);
 	for (int player_id = 0; player_id < Consts::NUM_PLAYERS; player_id++) {
 		for (int character_id = 0; character_id < Consts::NUM_CHARACTERS_PER_PLAYER; character_id ++) {
 			characters[player_id][character_id] = new Character(nullptr, tile_map);
-            QPoint p = QPoint(1400 + character_id * 100, 500);
+            QPoint p = QPoint(700 + character_id * 100, 300);
             if (player_id == 0) p.setX(- p.x());
-            p = p + QPoint(3200, 1800);
+            p = p + QPoint(Consts::GAME_SCENE_WIDTH / 2, Consts::GAME_SCENE_HEIGHT / 2);
 			characters[player_id][character_id]->setPos(p - QPoint(Consts::CHARACTER_WIDTH / 2, Consts::CHARACTER_HEIGHT / 2));
             this->addItem(characters[player_id][character_id]);
         }
@@ -64,10 +64,10 @@ GameScene::GameScene(SceneManager* manager) : Scene(manager) {
     cur_character = characters[0][0];
     // 纯纯的调试语句
     Bomb* _bomb = createBomb();
-    _bomb->setPos(_bomb->pos() + QPoint(1400 + 3200, -500 + 1800));
+    //_bomb->setPos(_bomb->pos() + QPoint(1400 + 3200, -500 + 1800));
     this->addItem(_bomb);
     manager->getView()->setSceneRect(this->sceneRect());
-	manager->getView()->fitInView(this->sceneRect());
+    manager->getView()->fitInView(QRect(0, 0, Consts::GAME_SCENE_WIDTH, Consts::GAME_SCENE_HEIGHT));
 }
 
 GameScene::~GameScene() {

@@ -44,7 +44,7 @@ void loadAnimations() {
     Animations::START_BUTTON = new Animation(":/assets/start_button.png", QSize(Consts::START_BUTTON_WIDTH, Consts::START_BUTTON_HEIGHT));
     Animations::HPBAR_BACKGROUND = new Animation(":/assets/character/hp_background.png", QSize(Consts::HPBAR_WIDTH, Consts::HPBAR_HEIGHT));
     Animations::HPBAR_BAR = new Animation(":/assets/character/hp_bar.png", QSize(Consts::HPBAR_WIDTH, Consts::HPBAR_HEIGHT));
-    Animations::BLOCKS[0] = new Animation(":/assets/blocks/dirt.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[1] = new Animation(":/assets/blocks/dirt.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
     Animations::EXPLOSION1 = new Animation(10, false);
     for (int i = 0; i < 50; i++)
         Animations::EXPLOSION1->addFrame(QString(":/assets/bomb/explosion1/1_") + QString::number(i) + ".png", QSize(Consts::EXPLOSION1_SIZE, Consts::EXPLOSION1_SIZE));

@@ -33,6 +33,8 @@ namespace Consts {
     extern const double K_HURT;
     extern const double BLOCK_DAMAGE_DISTANCE;
     extern const double MU;
+    extern const int GAME_SCENE_WIDTH;
+    extern const int GAME_SCENE_HEIGHT;
 }
 
 namespace Animations {

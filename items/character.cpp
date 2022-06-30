@@ -6,7 +6,7 @@
 #include <QGraphicsScene>
 
 Character::Character(QGraphicsItem *parent, TileMap *tile_map) : 
-    Sprite(parent, *Animations::CHARACTER_IDLE, false)
+    Sprite(parent, {{"idle", *Animations::CHARACTER_IDLE}, {"die", *Animations::CHARACTER_DIE}}, "idle", false)
 	{
 		this->tile_map = tile_map;
 		HP_bar = new HPBar(this);
@@ -43,6 +43,7 @@ void Character::hurt(int delta) {
 
 void Character::process(double delta) {
     //qDebug() << delta;
+    qDebug() << QGraphicsItem::scenePos();
 	velocity.setY(velocity.y() + Consts::GRAVITY * delta);
     QRectF rect = Sprite :: sceneBoundingRect();
     if (velocity.y() > 0 && tile_map->dis_to_ground(rect) < Consts::EPS) {
