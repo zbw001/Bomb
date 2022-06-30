@@ -37,6 +37,17 @@ namespace Consts {
     extern const double MU;
     extern const int GAME_SCENE_WIDTH;
     extern const int GAME_SCENE_HEIGHT;
+    extern const int MAX_CURSOR_DISTANCE_BOMB;
+    extern const int MAX_CURSOR_DISTANCE_MOVE;
+    extern const int MAX_CURSOR_DISTANCE_ITEM;
+    extern const double K_V0;
+    extern const int BACKGROUND_WIDTH;
+    extern const int BACKGROUND_HEIGHT;
+    extern const int MARK_SIZE;
+}
+
+namespace Globals {
+    extern int winner;
 }
 
 namespace Animations {
@@ -48,6 +59,8 @@ namespace Animations {
 	extern Animation* HPBAR_BAR;
 	extern Animation* BLOCKS[];
     extern Animation* EXPLOSION1;
+    extern Animation* BACKGROUND;
+    extern Animation* MARK;
 }
 
 namespace Scenes {

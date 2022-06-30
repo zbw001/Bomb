@@ -64,6 +64,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         PREFIX "/"
         FILES
             assets/像素Silver.ttf
+            assets/summer.png
+            assets/character/mark.png
             assets/start_button.png
             assets/blocks/dirt.png
             assets/bomb/bomb.png

@@ -19,5 +19,7 @@ OverScene::OverScene(SceneManager* manager) : Scene(manager) {
     button->setFocus();
     QObject::connect(button, &Sprite::mousePressed, [manager](QGraphicsSceneMouseEvent* e) {manager->change_scene("start");});
     this->addItem(button);
+    this->setSceneRect(QRect(0, 0, Consts::VIEW_WIDTH, Consts::VIEW_HEIGHT));
     manager->getView()->setSceneRect(this->sceneRect());
+    manager->getView()->fitInView(QRect(0, 0, Consts::VIEW_WIDTH, Consts::VIEW_HEIGHT));
 }

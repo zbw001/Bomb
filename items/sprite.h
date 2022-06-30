@@ -25,6 +25,7 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     void mousePressEvent(QGraphicsSceneMouseEvent* event) override;
     void timerEvent(QTimerEvent *e) override;
+    void setAnimation(const QString &key, const Animation &animation);
     QPointF center();
 signals:
     void mousePressed(QGraphicsSceneMouseEvent* event);

@@ -1,5 +1,6 @@
 #include "animation.h"
 #include <QDebug>
+#include <QRect>
 
 Animation::Animation(int fps, bool repeat) {
 	this->fps = fps;
@@ -18,4 +19,21 @@ void Animation::addFrame(const QString &res, const QSize &size = QSize()) {
     if (size.isValid())
         pixmap = pixmap.scaled(size.width(), size.height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     append(pixmap);
+}
+
+Animation Animation::crop(int width, int height) {
+    Animation ret(*this);
+    for (int i = 0; i < ret.length(); i++) {
+        ret[i] = ret[i].copy(QRect(0, 0, width, height));
+    }
+    return ret;
+}
+
+
+Animation Animation::setColor(int width, int height) {
+    Animation ret(*this);
+    for (int i = 0; i < ret.length(); i++) {
+        ret[i] = ret[i].copy(QRect(0, 0, width, height));
+    }
+    return ret;
 }

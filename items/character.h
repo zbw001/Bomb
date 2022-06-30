@@ -21,10 +21,15 @@ public:
 	int HP();
     void hurt(int delta);
     bool isDead();
+    void setCurrent(bool current);
 private:
+    Sprite *mark;
     bool dead;
+    bool current;
 	int _HP;
 	HPBar* HP_bar;
 	TileMap* tile_map;
+signals:
+    void stopped();
 };
 #endif

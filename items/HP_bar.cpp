@@ -5,7 +5,7 @@
 HPBar::HPBar(QGraphicsItem * parent) : 
     Sprite(parent, *Animations::HPBAR_BACKGROUND, false) {
     bar = new Sprite(this, *Animations::HPBAR_BAR, false);
-    bar->setPos(QPointF(Consts::HPBAR_BACKGROUND_WIDTH - Consts::HPBAR_BAR_WIDTH, 0));
+    bar->setPos(QPointF(Consts::HPBAR_BACKGROUND_WIDTH - Consts::HPBAR_BAR_WIDTH, 1));
 }
 
 HPBar::~HPBar() {
@@ -13,5 +13,7 @@ HPBar::~HPBar() {
 }
 
 void HPBar::setHP(int HP) {
-    bar->setScale(double(HP) / Consts::MAX_HP);
+    qDebug() << HP;
+    if (HP == 0) bar->hide();
+    else bar->setAnimation("default", Animations::HPBAR_BAR->crop(Consts::HPBAR_BAR_WIDTH * (1.0 * HP / Consts::MAX_HP), Consts::HPBAR_BAR_HEIGHT));
 }

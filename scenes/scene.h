@@ -7,7 +7,7 @@ class Scene : public QGraphicsScene {
 Q_OBJECT
 	public:
 		Scene(SceneManager *manager, QObject *parent=nullptr);
-	private:
+    protected:
 		SceneManager * manager;
 };
 #endif

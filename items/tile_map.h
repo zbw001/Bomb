@@ -26,6 +26,7 @@ public:
     void setBlock(int x, int y, int b);
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
+    Sprite* getBlockItem(int x, int y);
 };
 
 #endif

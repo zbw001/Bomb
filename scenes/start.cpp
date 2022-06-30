@@ -21,9 +21,10 @@ StartScene::StartScene(SceneManager* manager) : Scene(manager) {
     button->setPos(350, 250);
     button->setFlag(QGraphicsRectItem::ItemIsFocusable);
     button->setFocus();
-    this->setSceneRect(QRect(0, 0, 1600, 900));
     this->addItem(button);
+    this->setSceneRect(QRect(0, 0, Consts::VIEW_WIDTH, Consts::VIEW_HEIGHT));
     manager->getView()->setSceneRect(this->sceneRect());
+    manager->getView()->fitInView(QRect(0, 0, Consts::VIEW_WIDTH, Consts::VIEW_HEIGHT));
 }
 
 StartScene::~StartScene() {

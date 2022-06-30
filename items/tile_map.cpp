@@ -26,14 +26,14 @@ TileMap::~TileMap(){
 }
 
 int TileMap::getBlock(int x, int y) {
-    assert(x >= 0 && x < Consts::TILEMAP_WIDTH);
-    assert(y >= 0 && y < Consts::TILEMAP_HEIGHT);
+    //assert(x >= 0 && x < Consts::TILEMAP_WIDTH);
+    //assert(y >= 0 && y < Consts::TILEMAP_HEIGHT);
     return block_type[QPair<int,int>(x, y)];
 }
 
 void TileMap::setBlock(int x, int y, int b) {
-    assert(x >= 0 && x < Consts::TILEMAP_WIDTH);
-    assert(y >= 0 && y < Consts::TILEMAP_HEIGHT);
+    //assert(x >= 0 && x < Consts::TILEMAP_WIDTH);
+    //assert(y >= 0 && y < Consts::TILEMAP_HEIGHT);
     if (sprites[QPair<int,int>(x, y)]) delete sprites[QPair<int,int>(x, y)];
     block_type[QPair<int,int>(x, y)] = b;
     sprites[QPair<int,int>(x, y)] = nullptr;
@@ -92,4 +92,8 @@ void TileMap::paint(QPainter *painter,
                           const QStyleOptionGraphicsItem *option,
                           QWidget *widget) {
     return;
+}
+
+Sprite* TileMap::getBlockItem(int x, int y) {
+    return sprites[QPair<int,int>(x, y)];
 }

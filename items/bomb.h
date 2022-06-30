@@ -12,7 +12,7 @@
 class Bomb : public Sprite, public PhysicsObject {
 Q_OBJECT
 public:
-    Bomb(QGraphicsItem *parent, TileMap* tile_map);
+    Bomb(QGraphicsItem *parent, TileMap* tile_map, QGraphicsItem *owner);
 	void process(double delta) override;
 	QPointF velocity;
 	QPainterPath shape() const override;
@@ -24,5 +24,6 @@ signals:
 private:
 	TileMap* tile_map;
     bool collided;
+    QGraphicsItem * owner;
 };
 #endif

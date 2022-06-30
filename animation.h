@@ -11,5 +11,6 @@ public:
 	void addFrame(const QString &res, const QSize &size);
 	int fps;
 	bool repeat;
+    Animation crop(int width, int height);
 };
 #endif

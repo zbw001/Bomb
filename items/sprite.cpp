@@ -87,6 +87,11 @@ void Sprite::timerEvent(QTimerEvent *e) {
     }
 }
 
+void Sprite::setAnimation(const QString &key, const Animation &animation) {
+    animations[key] = animation;
+    Sprite::setAnimation(key);
+}
+
 QPixmap Sprite::getPixmap() const {
     //qDebug() << cur_animation << " " << cur_index;
     //qDebug() << animations[cur_animation].length();
