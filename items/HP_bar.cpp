@@ -13,7 +13,7 @@ HPBar::~HPBar() {
 }
 
 void HPBar::setHP(int HP) {
-    qDebug() << HP;
+    //qDebug() << HP;
     if (HP == 0) bar->hide();
     else bar->setAnimation("default", Animations::HPBAR_BAR->crop(Consts::HPBAR_BAR_WIDTH * (1.0 * HP / Consts::MAX_HP), Consts::HPBAR_BAR_HEIGHT));
 }

@@ -25,13 +25,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 145,
+				"line" : 159,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 153,
+				"line" : 167,
 				"parent" : 0
 			}
 		]
@@ -128,15 +128,16 @@
 				6,
 				8,
 				10,
-				13,
+				12,
 				15,
 				17,
-				18,
-				21,
+				19,
+				20,
 				23,
 				25,
-				26,
-				29
+				27,
+				28,
+				31
 			]
 		}
 	],
@@ -200,15 +201,16 @@
 				6,
 				8,
 				10,
-				13,
+				12,
 				15,
 				17,
-				18,
-				21,
+				19,
+				20,
 				23,
 				25,
-				26,
-				29
+				27,
+				28,
+				31
 			]
 		},
 		{
@@ -220,29 +222,30 @@
 				7,
 				9,
 				11,
-				12,
+				13,
 				14,
 				16,
-				19,
-				20,
+				18,
+				21,
 				22,
 				24,
-				27,
-				28
+				26,
+				29,
+				30
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				30
+				32
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				31
+				33
 			]
 		}
 	],
@@ -314,6 +317,17 @@
 		{
 			"backtrace" : 1,
 			"path" : "items/character.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "items/props.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "items/props.h",
 			"sourceGroupIndex" : 1
 		},
 		{

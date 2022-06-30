@@ -18,6 +18,7 @@ public:
     ~StartScene();
 private:
     Sprite* button;
+    Sprite* background;
 };
 
 #endif

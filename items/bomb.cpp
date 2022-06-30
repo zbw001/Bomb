@@ -9,8 +9,8 @@
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 
-Bomb::Bomb(QGraphicsItem *parent, TileMap *tile_map, QGraphicsItem *owner) :
-    Sprite(parent, {{"bomb", *Animations::BOMB}, {"explose", *Animations::EXPLOSION1}}, "bomb", false) {
+Bomb::Bomb(QGraphicsItem *parent, TileMap *tile_map, QGraphicsItem *owner, Animation flying, Animation explosing) :
+    Sprite(parent, {{"bomb", flying}, {"explose", explosing}}, "bomb", false) {
 		this->tile_map = tile_map;
         this->owner = owner;
         collided = false;
@@ -25,7 +25,7 @@ void Bomb::process(double delta) {
     for (int i = 0; i < items.length(); i++) {
         QGraphicsItem* item = items[i];
         QVariant v = item->data(0);
-        qDebug() << v;
+        //qDebug() << v;
         if (!v.isNull() && item != owner) {
             if (v.toString() == "character" || v.toString() == "block") {
                 collided = true;

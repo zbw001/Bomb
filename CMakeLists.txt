@@ -66,6 +66,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         PREFIX "/"
         FILES
             assets/像素Silver.ttf
+            assets/bomb/pass.png
             assets/summer.png
             assets/character/mark.png
             assets/start_button.png
@@ -75,6 +76,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             assets/bomb/bomb3.png
             assets/bomb/select_bomb.png
             assets/character/idle.png
+            assets/character/hurt.png
+            assets/character/walk0.png
+            assets/character/walk1.png
+            assets/character/walk2.png
+            assets/character/walk3.png
+            assets/character/walk4.png
+            assets/character/walk5.png
+            assets/character/walk6.png
+            assets/character/walk7.png
             assets/character/down.png
             assets/character/slide.png
             assets/character/hp_background.png
@@ -130,7 +140,170 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             assets/bomb/explosion1/1_47.png
             assets/bomb/explosion1/1_48.png
             assets/bomb/explosion1/1_49.png
-
+            assets/bomb/explosion2/frame0000.png
+            assets/bomb/explosion2/frame0001.png
+            assets/bomb/explosion2/frame0002.png
+            assets/bomb/explosion2/frame0003.png
+            assets/bomb/explosion2/frame0004.png
+            assets/bomb/explosion2/frame0005.png
+            assets/bomb/explosion2/frame0006.png
+            assets/bomb/explosion2/frame0007.png
+            assets/bomb/explosion2/frame0008.png
+            assets/bomb/explosion2/frame0009.png
+            assets/bomb/explosion2/frame0010.png
+            assets/bomb/explosion2/frame0011.png
+            assets/bomb/explosion2/frame0012.png
+            assets/bomb/explosion2/frame0013.png
+            assets/bomb/explosion2/frame0014.png
+            assets/bomb/explosion2/frame0015.png
+            assets/bomb/explosion2/frame0016.png
+            assets/bomb/explosion2/frame0017.png
+            assets/bomb/explosion2/frame0018.png
+            assets/bomb/explosion2/frame0019.png
+            assets/bomb/explosion2/frame0020.png
+            assets/bomb/explosion2/frame0021.png
+            assets/bomb/explosion2/frame0022.png
+            assets/bomb/explosion2/frame0023.png
+            assets/bomb/explosion2/frame0024.png
+            assets/bomb/explosion2/frame0025.png
+            assets/bomb/explosion2/frame0026.png
+            assets/bomb/explosion2/frame0027.png
+            assets/bomb/explosion2/frame0028.png
+            assets/bomb/explosion2/frame0029.png
+            assets/bomb/explosion2/frame0030.png
+            assets/bomb/explosion2/frame0031.png
+            assets/bomb/explosion2/frame0032.png
+            assets/bomb/explosion2/frame0033.png
+            assets/bomb/explosion2/frame0034.png
+            assets/bomb/explosion2/frame0035.png
+            assets/bomb/explosion2/frame0036.png
+            assets/bomb/explosion2/frame0037.png
+            assets/bomb/explosion2/frame0038.png
+            assets/bomb/explosion2/frame0039.png
+            assets/bomb/explosion2/frame0040.png
+            assets/bomb/explosion2/frame0041.png
+            assets/bomb/explosion2/frame0042.png
+            assets/bomb/explosion2/frame0043.png
+            assets/bomb/explosion2/frame0044.png
+            assets/bomb/explosion2/frame0045.png
+            assets/bomb/explosion2/frame0046.png
+            assets/bomb/explosion2/frame0047.png
+            assets/bomb/explosion2/frame0048.png
+            assets/bomb/explosion2/frame0049.png
+            assets/bomb/explosion2/frame0050.png
+            assets/bomb/explosion2/frame0051.png
+            assets/bomb/explosion2/frame0052.png
+            assets/bomb/explosion2/frame0053.png
+            assets/bomb/explosion2/frame0054.png
+            assets/bomb/explosion2/frame0055.png
+            assets/bomb/explosion2/frame0056.png
+            assets/bomb/explosion2/frame0057.png
+            assets/bomb/explosion2/frame0058.png
+            assets/bomb/explosion2/frame0059.png
+            assets/bomb/explosion2/frame0060.png
+            assets/bomb/explosion2/frame0061.png
+            assets/bomb/explosion2/frame0062.png
+            assets/bomb/explosion2/frame0063.png
+            assets/bomb/explosion2/frame0064.png
+            assets/bomb/explosion2/frame0065.png
+            assets/bomb/explosion2/frame0066.png
+            assets/bomb/explosion2/frame0067.png
+            assets/bomb/explosion2/frame0068.png
+            assets/bomb/explosion2/frame0069.png
+            assets/bomb/explosion2/frame0070.png
+            assets/bomb/explosion2/frame0071.png
+            assets/bomb/explosion2/frame0072.png
+            assets/bomb/explosion2/frame0073.png
+            assets/bomb/explosion2/frame0074.png
+            assets/bomb/explosion2/frame0075.png
+            assets/bomb/explosion2/frame0076.png
+            assets/bomb/explosion2/frame0077.png
+            assets/bomb/explosion2/frame0078.png
+            assets/bomb/explosion2/frame0079.png
+            assets/bomb/explosion2/frame0080.png
+            assets/bomb/explosion2/frame0081.png
+            assets/bomb/explosion3/frame0000.png
+            assets/bomb/explosion3/frame0001.png
+            assets/bomb/explosion3/frame0002.png
+            assets/bomb/explosion3/frame0003.png
+            assets/bomb/explosion3/frame0004.png
+            assets/bomb/explosion3/frame0005.png
+            assets/bomb/explosion3/frame0006.png
+            assets/bomb/explosion3/frame0007.png
+            assets/bomb/explosion3/frame0008.png
+            assets/bomb/explosion3/frame0009.png
+            assets/bomb/explosion3/frame0010.png
+            assets/bomb/explosion3/frame0011.png
+            assets/bomb/explosion3/frame0012.png
+            assets/bomb/explosion3/frame0013.png
+            assets/bomb/explosion3/frame0014.png
+            assets/bomb/explosion3/frame0015.png
+            assets/bomb/explosion3/frame0016.png
+            assets/bomb/explosion3/frame0017.png
+            assets/bomb/explosion3/frame0018.png
+            assets/bomb/explosion3/frame0019.png
+            assets/bomb/explosion3/frame0020.png
+            assets/bomb/explosion3/frame0021.png
+            assets/bomb/explosion3/frame0022.png
+            assets/bomb/explosion3/frame0023.png
+            assets/bomb/explosion3/frame0024.png
+            assets/bomb/explosion3/frame0025.png
+            assets/bomb/explosion3/frame0026.png
+            assets/bomb/explosion3/frame0027.png
+            assets/bomb/explosion3/frame0028.png
+            assets/bomb/explosion3/frame0029.png
+            assets/bomb/explosion3/frame0030.png
+            assets/bomb/explosion3/frame0031.png
+            assets/bomb/explosion3/frame0032.png
+            assets/bomb/explosion3/frame0033.png
+            assets/bomb/explosion3/frame0034.png
+            assets/bomb/explosion3/frame0035.png
+            assets/bomb/explosion3/frame0036.png
+            assets/bomb/explosion3/frame0037.png
+            assets/bomb/explosion3/frame0038.png
+            assets/bomb/explosion3/frame0039.png
+            assets/bomb/explosion3/frame0040.png
+            assets/bomb/explosion3/frame0041.png
+            assets/bomb/explosion3/frame0042.png
+            assets/bomb/explosion3/frame0043.png
+            assets/bomb/explosion3/frame0044.png
+            assets/bomb/explosion3/frame0045.png
+            assets/bomb/explosion3/frame0046.png
+            assets/bomb/explosion3/frame0047.png
+            assets/bomb/explosion3/frame0048.png
+            assets/bomb/explosion3/frame0049.png
+            assets/bomb/explosion3/frame0050.png
+            assets/bomb/explosion3/frame0051.png
+            assets/bomb/explosion3/frame0052.png
+            assets/bomb/explosion3/frame0053.png
+            assets/bomb/explosion3/frame0054.png
+            assets/bomb/explosion3/frame0055.png
+            assets/bomb/explosion3/frame0056.png
+            assets/bomb/explosion3/frame0057.png
+            assets/bomb/explosion3/frame0058.png
+            assets/bomb/explosion3/frame0059.png
+            assets/bomb/explosion3/frame0060.png
+            assets/bomb/explosion3/frame0061.png
+            assets/bomb/explosion3/frame0062.png
+            assets/bomb/explosion3/frame0063.png
+            assets/bomb/explosion3/frame0064.png
+            assets/bomb/explosion3/frame0065.png
+            assets/bomb/explosion3/frame0066.png
+            assets/bomb/explosion3/frame0067.png
+            assets/bomb/explosion3/frame0068.png
+            assets/bomb/explosion3/frame0069.png
+            assets/bomb/explosion3/frame0070.png
+            assets/blocks/dt1.png
+            assets/blocks/dt2.png
+            assets/blocks/dt3.png
+            assets/blocks/dt4.png
+            assets/blocks/dt5.png
+            assets/blocks/dt6.png
+            assets/blocks/dt7.png
+            assets/blocks/dt8.png
+            assets/blocks/dt9.png
+            assets/blocks/dt10.png
+            assets/blocks/dt11.png
     )
     
 # Define target properties for Android with Qt 6 as:

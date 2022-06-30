@@ -26,11 +26,13 @@ public:
     void mousePressEvent(QGraphicsSceneMouseEvent* event) override;
     void timerEvent(QTimerEvent *e) override;
     void setAnimation(const QString &key, const Animation &animation);
+    void flipHorizontal();
+    void flipVertical();
     QPointF center();
 signals:
     void mousePressed(QGraphicsSceneMouseEvent* event);
     void animationFinished();
-private:
+protected:
     QHash<QString, Animation> animations;
     QString cur_animation;
     int cur_timer, cur_index;

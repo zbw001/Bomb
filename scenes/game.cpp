@@ -17,9 +17,20 @@
 #include "../items/character.h"
 #include "../globals.h"
 #include "../items/props.h"
-Bomb* GameScene::createBomb(QGraphicsItem* character) {
-    Bomb* bomb = new Bomb(nullptr, tile_map, character);
-    QObject::connect(bomb, &Bomb::exploded, this, &GameScene::bombExploded);
+Bomb* GameScene::createBomb(QGraphicsItem* character, QString bomb_type) {
+    Bomb* bomb = nullptr;
+    if (bomb_type == "normal") {
+        bomb = new Bomb(nullptr, tile_map, character, *Animations::BOMB1, *Animations::EXPLOSION1);
+        QObject::connect(bomb, &Bomb::exploded, this, [this, bomb_type](Bomb *bomb){this->bombExploded(bomb, bomb_type);});
+    }
+    if (bomb_type == "attractive") {
+        bomb = new Bomb(nullptr, tile_map, character, *Animations::BOMB2, *Animations::EXPLOSION2);
+        QObject::connect(bomb, &Bomb::exploded, this, [this, bomb_type](Bomb *bomb){this->bombExploded(bomb, bomb_type);});
+    }
+    if (bomb_type == "repulsive") {
+        bomb = new Bomb(nullptr, tile_map, character, *Animations::BOMB3, *Animations::EXPLOSION3);
+        QObject::connect(bomb, &Bomb::exploded, this, [this, bomb_type](Bomb *bomb){this->bombExploded(bomb, bomb_type);});
+    }
     return bomb;
 }
 
@@ -27,26 +38,53 @@ double getLength(QPointF p) {
     return sqrt(p.x() * p.x() + p.y() * p.y());
 }
 
-void GameScene::bombExploded(Bomb *bomb) {
+void GameScene::bombExploded(Bomb *bomb, QString bomb_type) {
     // 炸弹破坏造成破坏
-    for (int i = 0; i < Consts::NUM_PLAYERS; i++) {
-        for (int j = 0; j < Consts::NUM_CHARACTERS_PER_PLAYER; j++) {
-            Character *c = characters[i][j];
-            if (!c->isDead()) {
-                double dis = getLength(c->center() - bomb->center());
-                double strength = 2 * atan(Consts::CHARACTER_WIDTH / 2.0 / dis) / M_PI;
-                c->velocity += (Consts::K_KNOCK * strength) * ((c->center() - bomb->center()) / dis);
-                c->hurt(int(Consts::K_HURT * strength));
+    if (bomb_type == "normal") {
+        for (int i = 0; i < Consts::NUM_PLAYERS; i++) {
+            for (int j = 0; j < Consts::NUM_CHARACTERS_PER_PLAYER; j++) {
+                Character *c = characters[i][j];
+                if (!c->isDead()) {
+                    double dis = getLength(c->center() - bomb->center());
+                    double strength = 2 * atan(Consts::CHARACTER_WIDTH / 2.0 / dis) / M_PI;
+                    c->velocity += (Consts::K_KNOCK * strength) * ((c->center() - bomb->center()) / dis);
+                    if (getLength(c->velocity) > Consts::EPS) c->setAnimation("hurt");
+                    c->hurt(int(Consts::K_HURT * strength));
+                }
             }
         }
-    }
-    int _ = int (Consts::BLOCK_DAMAGE_DISTANCE / Consts::BLOCK_SIZE) + 3;
-    for (int i = int(bomb->center().x()) / Consts::BLOCK_SIZE - _; i <= int(bomb->center().x()) / Consts::BLOCK_SIZE + _ ; i++) {
-        for (int j = int(bomb->center().y()) / Consts::BLOCK_SIZE - _; j <= int(bomb->center().y()) / Consts::BLOCK_SIZE + _ ; j++) {
-            if (tile_map->getBlock(i, j)) {
-                QPointF p = tile_map->getBlockItem(i, j)->center();
-                if (getLength(bomb->center() - p) <= Consts::BLOCK_DAMAGE_DISTANCE) {
-                    tile_map->setBlock(i, j, 0);
+        int _ = int (Consts::BLOCK_DAMAGE_DISTANCE / Consts::BLOCK_SIZE) + 3;
+        for (int i = int(bomb->center().x()) / Consts::BLOCK_SIZE - _; i <= int(bomb->center().x()) / Consts::BLOCK_SIZE + _ ; i++) {
+            for (int j = int(bomb->center().y()) / Consts::BLOCK_SIZE - _; j <= int(bomb->center().y()) / Consts::BLOCK_SIZE + _ ; j++) {
+                if (tile_map->getBlock(i, j)) {
+                    QPointF p = tile_map->getBlockItem(i, j)->center();
+                    if (getLength(bomb->center() - p) <= Consts::BLOCK_DAMAGE_DISTANCE) {
+                        tile_map->setBlock(i, j, 0);
+                    }
+                }
+            }
+        }
+    } else if (bomb_type == "attractive") {
+        for (int i = 0; i < Consts::NUM_PLAYERS; i++) {
+            for (int j = 0; j < Consts::NUM_CHARACTERS_PER_PLAYER; j++) {
+                Character *c = characters[i][j];
+                if (!c->isDead()) {
+                    double dis = getLength(c->center() - bomb->center());
+                    double strength = 2 * atan(Consts::CHARACTER_WIDTH * 8 / 2.0 / dis) / M_PI; // 吸引的话，需要缓慢的衰减
+                    c->velocity -= (Consts::K_ATTRACTIVE * strength) * ((c->center() - bomb->center()) / dis);
+                    if (getLength(c->velocity) > Consts::EPS) c->setAnimation("hurt");
+                }
+            }
+        }
+    } else {
+        for (int i = 0; i < Consts::NUM_PLAYERS; i++) {
+            for (int j = 0; j < Consts::NUM_CHARACTERS_PER_PLAYER; j++) {
+                Character *c = characters[i][j];
+                if (!c->isDead()) {
+                    double dis = getLength(c->center() - bomb->center());
+                    double strength = 2 * atan(Consts::CHARACTER_WIDTH / 2.0 / dis) / M_PI;
+                    c->velocity += (Consts::K_REPULSIVE * strength) * ((c->center() - bomb->center()) / dis);
+                    if (getLength(c->velocity) > Consts::EPS) c->setAnimation("hurt");
                 }
             }
         }
@@ -71,9 +109,32 @@ void GameScene::process(double delta) {
         delete cursor_indicator;
         cursor_indicator = nullptr;
     }
-    if (cur_character->isDead()) {this->animationFinished(GameState::WAITING_FOR_PLAYER_MOVE); return;}
+    if (state == GameState::WAITING_FOR_KNOCKED_PLAYER || state == GameState::PLAYING_ANIMATION) {
+        if (!ui->isPassed()) {
+            ui->setPassed(true);
+        }
+    }
+    if (state == 0 && ui->isPassed()) qDebug() << "process" << state << " " << ui->isPassed();
+    if (state == GameState::WAITING_FOR_KNOCKED_PLAYER) {
+        bool ok = true;
+        for (int i = 0; i < Consts::NUM_PLAYERS; i++) {
+            for (int j = 0; j < Consts::NUM_CHARACTERS_PER_PLAYER; j++) {
+                if (characters[i][j]->isMoving() || !characters[i][j]->isAnimationFinished()) {
+                    ok = false;
+                }
+            }
+        }
+        if (!ok) return;
+        //qDebug() << "128" << _next_state;
+        this->animationFinished(_next_state);
+    }
+    if (state != GameState::PLAYING_ANIMATION && cur_character->isDead()) {
+        //qDebug() << "132" << GameState::WAITING_FOR_PLAYER_MOVE;
+        this->animationFinished(GameState::WAITING_FOR_PLAYER_MOVE); return;
+    }
     if (state == GameState::WAITING_FOR_PLAYER_ITEM) {
-        qDebug() << "还未实现";
+        // 暂不实现这一功能，直接跳过
+        // qDebug() << "还未实现";
         this->animationFinished(GameState::WAITING_FOR_PLAYER_MOVE);
     }
     if (state == GameState::WAITING_FOR_PLAYER_BOMB || state == GameState::WAITING_FOR_PLAYER_ITEM || state == GameState::WAITING_FOR_PLAYER_MOVE) {
@@ -95,7 +156,7 @@ void GameScene::process(double delta) {
                 cur_pos += delta * velocity;
                 if (t % (2 * D) == 0) {
                     QGraphicsLineItem * i = new QGraphicsLineItem(QLineF(last_pos, cur_pos), cursor_indicator);
-                    QPen pen(Qt::blue);
+                    QPen pen(state == GameState::WAITING_FOR_PLAYER_BOMB ? Qt::red : Qt::blue);
                     pen.setWidth(5);
                     i->setPen(pen);
                     cursor_indicator->addToGroup(i);
@@ -110,6 +171,7 @@ void GameScene::process(double delta) {
 }
 
 void GameScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) {
+    QGraphicsScene::mousePressEvent(mouseEvent);
     if (state == GameState::WAITING_FOR_PLAYER_BOMB || state == GameState::WAITING_FOR_PLAYER_MOVE || state == GameState::WAITING_FOR_PLAYER_ITEM) {
         QPoint _pos = manager->getView()->mapFromGlobal(QCursor::pos());
         QPointF cursorPos = manager->getView()->mapToScene(_pos);
@@ -117,13 +179,15 @@ void GameScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) {
         if (state == GameState::WAITING_FOR_PLAYER_BOMB) {
             if (d <= Consts::MAX_CURSOR_DISTANCE_BOMB) {
                 QPointF velocity = Consts::K_V0 * (cursorPos - this->cur_character->center()), cur_pos = this->cur_character->center();
-                Bomb* bomb = createBomb(cur_character);
+                Bomb* bomb = createBomb(cur_character, this->ui->getCurrentBombName());
                 bomb->setPos(cur_pos - QPointF(Consts::BOMB_WIDTH / 2.0, Consts::BOMB_HEIGHT / 2.0));
                 bomb->velocity = velocity;
                 this->addItem(bomb);
                 state = GameState::PLAYING_ANIMATION;
-                QObject::connect(bomb, &Bomb::destroyed, this, [this, bomb](){this->animationFinished(GameState::WAITING_FOR_PLAYER_ITEM); QObject::disconnect(bomb, &Bomb::destroyed, this, nullptr);});
-                qDebug() << "qwq???" << state;
+                QObject::connect(bomb, &Bomb::destroyed, this, [this, bomb](){this->animationFinished(GameState::WAITING_FOR_KNOCKED_PLAYER); this->_next_state = WAITING_FOR_PLAYER_ITEM; QObject::disconnect(bomb, &Bomb::destroyed, this, nullptr);});
+            } else if (ui->isPassed()) {
+                //qDebug() << "passed";
+                state = GameState::WAITING_FOR_PLAYER_ITEM;
             }
         }
         if (state == GameState::WAITING_FOR_PLAYER_MOVE) {
@@ -131,14 +195,21 @@ void GameScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) {
                 QPointF velocity = Consts::K_V0 * (cursorPos - this->cur_character->center());
                 cur_character->velocity += velocity;
                 state = GameState::PLAYING_ANIMATION;
-                QObject::connect(cur_character, &Character::stopped, this, [this](){this->animationFinished(GameState::WAITING_FOR_PLAYER_BOMB); QObject::disconnect(cur_character, &Character::stopped, this, nullptr);});
+                cur_character->setAnimation("walk");
+                Character *_ = cur_character;
+                QObject::connect(_, &Character::stopped, this, [this, _](){this->animationFinished(GameState::WAITING_FOR_PLAYER_BOMB); QObject::disconnect(_, &Character::stopped, this, nullptr);});
+            } else if (ui->isPassed()) {
+                //qDebug() << "passed";
+                state = GameState::WAITING_FOR_PLAYER_BOMB;
             }
         }
     }
 }
 
 void GameScene::animationFinished(GameState state) {
+    //qDebug() << state << GameState::WAITING_FOR_PLAYER_MOVE;
     this->state = state;
+    ui->setPassed(false);
     if (state == GameState::WAITING_FOR_PLAYER_MOVE) {
         this->cur_character->setCurrent(false);
         bool* all_dead = new bool[Consts::NUM_PLAYERS];
@@ -179,7 +250,7 @@ GameScene::GameScene(SceneManager* manager) : Scene(manager) {
 	for (int player_id = 0; player_id < Consts::NUM_PLAYERS; player_id++) {
 		for (int character_id = 0; character_id < Consts::NUM_CHARACTERS_PER_PLAYER; character_id ++) {
             characters[player_id][character_id] = new Character(nullptr, tile_map, player_id, character_id);
-            QPoint p = QPoint(700 + character_id * 100, 300);
+            QPoint p = QPoint(700 + character_id * 100, 0);
             if (player_id == 0) p.setX(- p.x());
             p = p + QPoint(Consts::GAME_SCENE_WIDTH / 2, Consts::GAME_SCENE_HEIGHT / 2);
 			characters[player_id][character_id]->setPos(p - QPoint(Consts::CHARACTER_WIDTH / 2, Consts::CHARACTER_HEIGHT / 2));
@@ -205,4 +276,5 @@ GameScene::~GameScene() {
 	delete tile_map;
     delete cursor_indicator;
     delete background;
+    delete ui;
 }

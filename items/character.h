@@ -22,6 +22,8 @@ public:
     void hurt(int delta);
     bool isDead();
     void setCurrent(bool current);
+    bool isMoving();
+    bool isAnimationFinished();
 private:
     int player_id, character_id;
     Sprite *mark;
@@ -29,7 +31,7 @@ private:
     bool current;
 	int _HP;
 	HPBar* HP_bar;
-	TileMap* tile_map;
+    TileMap* tile_map;
 signals:
     void stopped();
 };

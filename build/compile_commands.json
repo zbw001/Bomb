@@ -36,6 +36,11 @@
 },
 {
   "directory": "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang  -O0 -Wall -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17 -o CMakeFiles/Bomb.dir/items/props.cpp.o -c /Users/zbw/大学/程设/大作业/Bomb/Bomb/items/props.cpp",
+  "file": "/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/props.cpp"
+},
+{
+  "directory": "/Users/zbw/大学/程设/大作业/Bomb/Bomb/build",
   "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build -I/Users/zbw/大学/程设/大作业/Bomb/Bomb -I/Users/zbw/大学/程设/大作业/Bomb/Bomb/build/Bomb_autogen/include -isystem /Users/zbw/opt/anaconda3/include/qt -isystem /Users/zbw/opt/anaconda3/include/qt/QtWidgets -isystem /Users/zbw/opt/anaconda3/include/qt/QtGui -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -isystem /Users/zbw/opt/anaconda3/include/qt/QtCore -isystem /Users/zbw/opt/anaconda3/./mkspecs/macx-clang  -O0 -Wall -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -fPIC -std=gnu++17 -o CMakeFiles/Bomb.dir/scenes/game.cpp.o -c /Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/game.cpp",
   "file": "/Users/zbw/大学/程设/大作业/Bomb/Bomb/scenes/game.cpp"
 },

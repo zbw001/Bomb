@@ -2,6 +2,7 @@
 #include "HU7TA6T7T7/moc_HP_bar.cpp"
 #include "HU7TA6T7T7/moc_bomb.cpp"
 #include "HU7TA6T7T7/moc_character.cpp"
+#include "HU7TA6T7T7/moc_props.cpp"
 #include "HU7TA6T7T7/moc_sprite.cpp"
 #include "HU7TA6T7T7/moc_tile_map.cpp"
 #include "EWIEGA46WW/moc_physics_manager.cpp"

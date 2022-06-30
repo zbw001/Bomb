@@ -7,5 +7,8 @@ class OverScene: public Scene {
     Q_OBJECT
 public:
     Q_INVOKABLE OverScene(SceneManager* manager);
+    ~OverScene();
     Sprite *button;
+    Sprite *background;
+    Sprite *text;
 };

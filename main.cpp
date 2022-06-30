@@ -40,7 +40,7 @@ void loadFonts() {
 void loadAnimations() {
     Animations::CHARACTER_IDLE = new Animation(":/assets/character/idle.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
     Animations::CHARACTER_DIE = new Animation(2, false);
-    Animations::BOMB = new Animation(":/assets/bomb/bomb.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
+    Animations::BOMB1 = new Animation(":/assets/bomb/bomb.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
     Animations::BOMB2 = new Animation(":/assets/bomb/bomb2.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
     Animations::BOMB3 = new Animation(":/assets/bomb/bomb3.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
     Animations::SELECT_BOMB= new Animation(":/assets/bomb/select_bomb.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
@@ -52,10 +52,33 @@ void loadAnimations() {
     Animations::EXPLOSION1 = new Animation(10, false);
     for (int i = 0; i < 50; i++)
         Animations::EXPLOSION1->addFrame(QString(":/assets/bomb/explosion1/1_") + QString::number(i) + ".png", QSize(Consts::EXPLOSION1_SIZE, Consts::EXPLOSION1_SIZE));
+    Animations::EXPLOSION2 = new Animation(82 / 2, false);
+    for (int i = 81; i >= 0; i--)
+        if (i >= 10) Animations::EXPLOSION2->addFrame(QString(":/assets/bomb/explosion2/frame00") + QString::number(i) + ".png", QSize(Consts::EXPLOSION2_SIZE, Consts::EXPLOSION2_SIZE));
+        else Animations::EXPLOSION2->addFrame(QString(":/assets/bomb/explosion2/frame000") + QString::number(i) + ".png", QSize(Consts::EXPLOSION2_SIZE, Consts::EXPLOSION2_SIZE));
+    Animations::EXPLOSION3 = new Animation(71 / 2, false);
+    for (int i = 0; i < 71; i++)
+        if (i >= 10) Animations::EXPLOSION3->addFrame(QString(":/assets/bomb/explosion3/frame00") + QString::number(i) + ".png", QSize(Consts::EXPLOSION3_SIZE, Consts::EXPLOSION3_SIZE));
+        else Animations::EXPLOSION3->addFrame(QString(":/assets/bomb/explosion3/frame000") + QString::number(i) + ".png", QSize(Consts::EXPLOSION3_SIZE, Consts::EXPLOSION3_SIZE));
+    Animations::WALK = new Animation(8, true);
+    for (int i = 0; i < 8; i++)
+        Animations::WALK->addFrame(QString(":/assets/character/walk") + QString::number(i) + ".png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
+    Animations::HURT = new Animation(":/assets/character/hurt.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
     Animations::CHARACTER_DIE->addFrame(":/assets/character/down.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
     Animations::CHARACTER_DIE->addFrame(":/assets/character/slide.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
     Animations::BACKGROUND = new Animation(":/assets/summer.png", QSize(Consts::BACKGROUND_WIDTH, Consts::BACKGROUND_HEIGHT));
     Animations::MARK = new Animation(":/assets/character/mark.png", QSize(Consts::MARK_SIZE, Consts::MARK_SIZE));
+    Animations::BLOCKS[1] = new Animation(":/assets/blocks/dt1.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[2] = new Animation(":/assets/blocks/dt2.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[3] = new Animation(":/assets/blocks/dt3.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[4] = new Animation(":/assets/blocks/dt4.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[5] = new Animation(":/assets/blocks/dt5.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[6] = new Animation(":/assets/blocks/dt6.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[7] = new Animation(":/assets/blocks/dt7.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[8] = new Animation(":/assets/blocks/dt8.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[9] = new Animation(":/assets/blocks/dt9.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[10] = new Animation(":/assets/blocks/dt10.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::BLOCKS[11] = new Animation(":/assets/blocks/dt11.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
 }
 
 int main(int argc, char *argv[]) {

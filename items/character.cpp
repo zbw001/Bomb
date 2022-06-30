@@ -6,7 +6,7 @@
 #include <QGraphicsScene>
 
 Character::Character(QGraphicsItem *parent, TileMap *tile_map, int player_id, int character_id) :
-    Sprite(parent, {{"idle", *Animations::CHARACTER_IDLE}, {"die", *Animations::CHARACTER_DIE}}, "idle", false)
+    Sprite(parent, {{"idle", *Animations::CHARACTER_IDLE}, {"die", *Animations::CHARACTER_DIE}, {"hurt", *Animations::HURT}, {"walk", *Animations::WALK}}, "idle", false)
 	{
         this->player_id = player_id;
         this->character_id = character_id;
@@ -57,10 +57,18 @@ void Character::hurt(int delta) {
     }
 }
 
+bool Character::isMoving() {
+    return velocity.manhattanLength() != 0;
+}
+
+bool Character::isAnimationFinished() {
+    return Sprite::finished;
+}
+
 void Character::process(double delta) {
     //qDebug() << delta;
     //qDebug() << QGraphicsItem::scenePos();
-    bool moving = false;
+    bool moving = isMoving();
     if (qAbs(velocity.x()) > Consts::EPS || qAbs(velocity.y()) > Consts::EPS) {
         moving = true;
     }
@@ -79,11 +87,25 @@ void Character::process(double delta) {
         velocity.setX(0);
     }
 	setPos(pos() + d);
-    if (moving && qAbs(velocity.x()) < Consts::EPS && qAbs(velocity.y()) < Consts::EPS) {
+    if (moving && !isMoving()) {
         emit stopped();
+        this->resetTransform();
+        this->flipHorizontal();
+        HP_bar->resetTransform();
+        HP_bar->flipHorizontal();
+        this->setAnimation("idle");
+    }
+    if (isMoving() && qAbs(velocity.x()) > Consts::EPS) {
+        HP_bar->resetTransform();
+        this->resetTransform();
+        if (velocity.x() < 0) {
+            HP_bar->flipHorizontal();
+            this->flipHorizontal();
+        }
     }
     if (!QRectF(0, - Consts::GAME_SCENE_HEIGHT / 3, Consts::GAME_SCENE_WIDTH, Consts::GAME_SCENE_HEIGHT / 3 + Consts::GAME_SCENE_HEIGHT).intersects(this->sceneBoundingRect())) {
         emit stopped();
+        velocity = QPointF();
         dead = true;
         PhysicsObject::setProcessEnabled(false);
         this->scene()->removeItem(this);

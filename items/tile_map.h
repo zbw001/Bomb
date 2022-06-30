@@ -16,6 +16,7 @@ Q_OBJECT
 private:
     QHash<QPair<int,int>, Sprite *> sprites;
     QHash<QPair<int,int>, int> block_type;
+    void make_map1();
 public:
     TileMap(QGraphicsItem *parent);
     ~TileMap();

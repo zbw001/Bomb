@@ -1,6 +1,7 @@
 #include "sprite.h"
 #include <QDebug>
 #include <QSizeF>
+#include <QTransform>
 
 Sprite::Sprite(QGraphicsItem *parent, const Animation &animation, bool event_enabled, const QString &text, const QColor &color, const QFont &font) : QGraphicsItem(parent) {
     this->setText(text, color, font);
@@ -39,6 +40,48 @@ void Sprite::setAnimation(const QString &name) {
     update();
 }
 
+void Sprite::flipHorizontal() {
+    QTransform transform(this->transform());
+    qreal m11 = transform.m11();    // Horizontal scaling
+    qreal m12 = transform.m12();    // Vertical shearing
+    qreal m13 = transform.m13();    // Horizontal Projection
+    qreal m21 = transform.m21();    // Horizontal shearing
+    qreal m22 = transform.m22();    // vertical scaling
+    qreal m23 = transform.m23();    // Vertical Projection
+    qreal m31 = transform.m31();    // Horizontal Position (DX)
+    qreal m32 = transform.m32();    // Vertical Position (DY)
+    qreal m33 = transform.m33();    // Addtional Projection Factor
+    qreal scale = m11;
+    m11 = -m11;
+    if(m31 > 0)
+        m31 = 0;
+    else
+        m31 = (boundingRect().width() * scale);
+    transform.setMatrix(m11, m12, m13, m21, m22, m23, m31, m32, m33);
+    setTransform(transform);
+}
+
+void Sprite::flipVertical() {
+    QTransform transform(this->transform());
+    qreal m11 = transform.m11();    // Horizontal scaling
+    qreal m12 = transform.m12();    // Vertical shearing
+    qreal m13 = transform.m13();    // Horizontal Projection
+    qreal m21 = transform.m21();    // Horizontal shearing
+    qreal m22 = transform.m22();    // vertical scaling
+    qreal m23 = transform.m23();    // Vertical Projection
+    qreal m31 = transform.m31();    // Horizontal Position (DX)
+    qreal m32 = transform.m32();    // Vertical Position (DY)
+    qreal m33 = transform.m33();    // Addtional Projection Factor
+    qreal scale = m22;
+    m22 = -m22;
+    if(m32 > 0)
+        m32 = 0;
+    else
+        m32 = (boundingRect().height() * scale);
+    transform.setMatrix(m11, m12, m13, m21, m22, m23, m31, m32, m33);
+    setTransform(transform);
+}
+
 QRectF Sprite::boundingRect() const {
     return QRectF(getPixmap().rect());
 }
@@ -64,7 +107,7 @@ QPainterPath Sprite::shape() const {
 
 void Sprite::mousePressEvent(QGraphicsSceneMouseEvent *event) {
     if (event_enabled) {
-        qDebug("点击事件");
+        //qDebug("点击事件");
         emit mousePressed(event);
     } else QGraphicsItem::mousePressEvent(event);
 }
@@ -93,6 +136,10 @@ void Sprite::setAnimation(const QString &key, const Animation &animation) {
 }
 
 QPixmap Sprite::getPixmap() const {
+    if (animations[cur_animation].isEmpty()) {
+        QPixmap ret(Consts::VIEW_WIDTH, Consts::VIEW_HEIGHT); ret.fill(Qt::transparent);
+        return ret;
+    }
     //qDebug() << cur_animation << " " << cur_index;
     //qDebug() << animations[cur_animation].length();
     return animations[cur_animation][cur_index];

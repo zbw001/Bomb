@@ -29,6 +29,8 @@ namespace Consts {
 	extern const int VIEW_HEIGHT;
 	extern const int GRAVITY;
     extern const int EXPLOSION1_SIZE;
+    extern const int EXPLOSION2_SIZE;
+    extern const int EXPLOSION3_SIZE;
 	extern const int NUM_PLAYERS;
 	extern const int NUM_CHARACTERS_PER_PLAYER;
     extern const double K_KNOCK;
@@ -44,6 +46,8 @@ namespace Consts {
     extern const int BACKGROUND_WIDTH;
     extern const int BACKGROUND_HEIGHT;
     extern const int MARK_SIZE;
+    extern const double K_REPULSIVE;
+    extern const double K_ATTRACTIVE;
 }
 
 namespace Globals {
@@ -53,7 +57,7 @@ namespace Globals {
 namespace Animations {
 	extern Animation* CHARACTER_IDLE;
     extern Animation* CHARACTER_DIE;
-	extern Animation* BOMB ;
+    extern Animation* BOMB1;
     extern Animation* BOMB2;
     extern Animation* BOMB3 ;
     extern Animation* SELECT_BOMB;
@@ -63,8 +67,12 @@ namespace Animations {
 	extern Animation* HPBAR_BAR;
 	extern Animation* BLOCKS[];
     extern Animation* EXPLOSION1;
+    extern Animation* EXPLOSION2;
+    extern Animation* EXPLOSION3;
     extern Animation* BACKGROUND;
     extern Animation* MARK;
+    extern Animation* HURT;
+    extern Animation* WALK;
 }
 
 namespace Scenes {

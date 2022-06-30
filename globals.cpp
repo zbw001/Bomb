@@ -15,8 +15,8 @@ namespace Consts {
     const int BOMB_HEIGHT = 48;
     const int BOMB_RADIUS = 24;
     const int MAX_HP = 100;
-    const int START_BUTTON_WIDTH = 190;
-    const int START_BUTTON_HEIGHT = 49;
+    const int START_BUTTON_WIDTH = 190*2;
+    const int START_BUTTON_HEIGHT = 49*2;
 
     const int HPBAR_BACKGROUND_WIDTH = 64;
     const int HPBAR_BACKGROUND_HEIGHT = 17;
@@ -28,9 +28,13 @@ namespace Consts {
     const int VIEW_HEIGHT = 720;
     const int GRAVITY = 1200;
     const int EXPLOSION1_SIZE = 500;
+    const int EXPLOSION2_SIZE = 500;
+    const int EXPLOSION3_SIZE = 500;
     const int NUM_PLAYERS = 2;
     const int NUM_CHARACTERS_PER_PLAYER = 3;
     const double K_KNOCK = 3000;
+    const double K_REPULSIVE = 6000;
+    const double K_ATTRACTIVE = 6000;
     const double K_HURT = 100;
     const double BLOCK_DAMAGE_DISTANCE = BLOCK_SIZE * 3;
     const double MU = 3000;
@@ -38,8 +42,8 @@ namespace Consts {
     const int GAME_SCENE_HEIGHT = VIEW_HEIGHT * 2;
     const int TILEMAP_WIDTH = int(GAME_SCENE_WIDTH / BLOCK_SIZE) + 1;
     const int TILEMAP_HEIGHT = int(GAME_SCENE_HEIGHT / BLOCK_SIZE) + 1;
-    const int MAX_CURSOR_DISTANCE_BOMB = 200;
-    const int MAX_CURSOR_DISTANCE_MOVE = 150;
+    const int MAX_CURSOR_DISTANCE_BOMB = 220;
+    const int MAX_CURSOR_DISTANCE_MOVE = 250;
     const int MAX_CURSOR_DISTANCE_ITEM = 200;
     const int BACKGROUND_WIDTH = 4320 / 4 * 3;
     const int BACKGROUND_HEIGHT = 2160 / 4 * 3;
@@ -50,20 +54,24 @@ namespace Consts {
 namespace Animations {
     Animation* CHARACTER_IDLE = nullptr;
     Animation* CHARACTER_DIE = nullptr;
-    Animation* BOMB = nullptr;
-    Animation* BOMB2 =nullptr;
-    Animation* BOMB3 =nullptr;
+    Animation* BOMB1 = nullptr;
+    Animation* BOMB2 = nullptr;
+    Animation* BOMB3 = nullptr;
     Animation* SELECT_BOMB = nullptr;
     Animation* BOMB_PASS = nullptr;
     Animation* START_BUTTON = nullptr;
     Animation* HPBAR_BACKGROUND = nullptr;
     Animation* HPBAR_BAR = nullptr;
     Animation* BLOCKS[] = {
-        nullptr, nullptr
+        nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr
     };
     Animation* EXPLOSION1 = nullptr;
+    Animation* EXPLOSION2 = nullptr;
+    Animation* EXPLOSION3 = nullptr;
     Animation* BACKGROUND = nullptr;
     Animation* MARK = nullptr;
+    Animation* WALK = nullptr;
+    Animation* HURT = nullptr;
 }
 
 namespace Scenes {

@@ -4,19 +4,83 @@
 #include <QObject>
 #include <QDebug>
 #include <QtGlobal>
+#include <stdlib.h>
+#include <algorithm>
 
 QPainterPath TileMap::shape() const {
     return QPainterPath();
 }
 
+void TileMap::make_map1() {
+    for(int i=0;i<Consts::TILEMAP_WIDTH;i++) {
+        for(int j=0;j<Consts::TILEMAP_HEIGHT;j++) {
+            if(j<=27&&j>=20) setBlock(i,j,2);
+        }
+    }
+}
+
+void swap(int &x,int &y) {
+    int t=x;x=y;y=t;
+}
+int max(int x,int y) {
+    return x>y?x:y;
+}
+
 TileMap::TileMap(QGraphicsItem *parent) : QGraphicsItem(parent) {
-    for (int i = 0; i < Consts::TILEMAP_WIDTH; i++) {
+
+    int maph[100],mapf[100][100];
+    memset(maph,0,sizeof(maph));
+    memset(mapf,0,sizeof(mapf));
+    maph[0]=10,maph[Consts::TILEMAP_WIDTH-1]=10;
+    for(int i=1;i+1<Consts::TILEMAP_WIDTH;i++) {
+        if(rand()%4==0) maph[i]=-1;
+    }
+    for(int i=1;i<Consts::TILEMAP_WIDTH/2;i++) {
+        maph[i]+=maph[i-1];
+    }
+    for(int i=Consts::TILEMAP_WIDTH-2;i>=Consts::TILEMAP_WIDTH/2;i--) {
+        maph[i]+=maph[i+1];
+    }
+    for(int i=0;i<Consts::TILEMAP_WIDTH;i++) {
+        for(int j=27;j>=27-maph[i]+1;j--) mapf[i][j]=1;
+    }
+    for(int i=0;i<Consts::TILEMAP_WIDTH;i++) {
+        for(int j=0;j<Consts::TILEMAP_HEIGHT;j++) if(mapf[i][j]) {
+            int fl=0,fr=0,fu=0;
+            if(i==0||mapf[i-1][j]==0) fl=1;
+            if(i+1==Consts::TILEMAP_WIDTH||mapf[i+1][j]==0) fr=1;
+            if(j==0||mapf[i][j-1]==0) fu=1;
+            int tp=4;
+            if(fl&&fr&&fu) tp=9;
+            else if(fl&&fr) tp=10;
+            else if(fl&&fu) tp=11;
+            else if(fl) tp=3;
+            else if(fr&&fu) tp=2;
+            else if(fr) tp=5;
+            else if(fu) tp=1;
+            setBlock(i,j,tp);
+        }
+    }
+    int flag[100];
+    memset(flag,0,sizeof(flag));
+    for(int i=0;i<7;i++) {
+        int L=Consts::TILEMAP_WIDTH/4,R=L*3;
+        int getl=rand()%(R-L+1)+L,getr=rand()%(R-L+1)+L;
+        if(getl>getr) swap(getl,getr);
+        int y=max(maph[getl],maph[getr])+rand()%10+1;
+        while(flag[y]) {
+            y=max(maph[getl],maph[getr])+rand()%10+1;
+        }
+        flag[y]=1;
+        for(int x=getl;x<=getr;x++) setBlock(x,27-y+1,7);
+    }
+/*    for (int i = 0; i < Consts::TILEMAP_WIDTH; i++) {
         for (int j = 0; j < Consts::TILEMAP_HEIGHT; j++) {
             if (j == 27) {
                 setBlock(i, j, 1);
             }
         }
-    }
+    }*/
 }
 
 TileMap::~TileMap(){

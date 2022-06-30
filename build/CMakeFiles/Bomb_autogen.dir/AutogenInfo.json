@@ -101,6 +101,12 @@
 			null
 		],
 		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/props.h",
+			"MU",
+			"HU7TA6T7T7/moc_props.cpp",
+			null
+		],
+		[
 			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/sprite.h",
 			"MU",
 			"HU7TA6T7T7/moc_sprite.cpp",
@@ -227,6 +233,11 @@
 		],
 		[
 			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/character.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/zbw/大学/程设/大作业/Bomb/Bomb/items/props.cpp",
 			"MU",
 			null
 		],
