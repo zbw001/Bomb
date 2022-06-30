@@ -39,11 +39,17 @@ void loadFonts() {
 
 void loadAnimations() {
     Animations::CHARACTER_IDLE = new Animation(":/assets/character/idle.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
+    Animations::CHARACTER_DIE = new Animation(1, false);
     Animations::BOMB = new Animation(":/assets/bomb/bomb.png", QSize(Consts::BOMB_WIDTH, Consts::BOMB_HEIGHT));
     Animations::START_BUTTON = new Animation(":/assets/start_button.png", QSize(Consts::START_BUTTON_WIDTH, Consts::START_BUTTON_HEIGHT));
     Animations::HPBAR_BACKGROUND = new Animation(":/assets/character/hp_background.png", QSize(Consts::HPBAR_WIDTH, Consts::HPBAR_HEIGHT));
     Animations::HPBAR_BAR = new Animation(":/assets/character/hp_bar.png", QSize(Consts::HPBAR_WIDTH, Consts::HPBAR_HEIGHT));
     Animations::BLOCKS[0] = new Animation(":/assets/blocks/dirt.png", QSize(Consts::BLOCK_SIZE, Consts::BLOCK_SIZE));
+    Animations::EXPLOSION1 = new Animation(10, false);
+    for (int i = 0; i < 50; i++)
+        Animations::EXPLOSION1->addFrame(QString(":/assets/bomb/explosion1/1_") + QString::number(i) + ".png", QSize(Consts::EXPLOSION1_SIZE, Consts::EXPLOSION1_SIZE));
+    Animations::CHARACTER_DIE->addFrame(":/assets/character/down.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
+    Animations::CHARACTER_DIE->addFrame(":/assets/character/slide.png", QSize(Consts::CHARACTER_WIDTH, Consts::CHARACTER_HEIGHT));
 }
 
 int main(int argc, char *argv[]) {

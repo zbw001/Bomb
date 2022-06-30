@@ -15,7 +15,7 @@
 
 StartScene::StartScene(SceneManager* manager) : Scene(manager) {
     //assert(Animations::START_BUTTON);
-    this->button = new Sprite(nullptr, *Animations::START_BUTTON, true, true, "开始游戏", Qt::black, QFont(Fonts::default_font_family, 16, QFont::Normal));
+    this->button = new Sprite(nullptr, *Animations::START_BUTTON, true, "开始游戏", Qt::black, QFont(Fonts::default_font_family, 16, QFont::Normal));
     qDebug() << this->button->boundingRect();
     QObject::connect(this->button, &Sprite::mousePressed, [manager](QGraphicsSceneMouseEvent* e) {manager->change_scene("game");});
     button->setPos(350, 250);

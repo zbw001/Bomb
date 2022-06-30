@@ -1,3 +1,5 @@
+#ifndef BOMB_H
+#define BOMB_H
 #include "sprite.h"
 #include "../physics_object.h"
 #include "tile_map.h"
@@ -21,4 +23,6 @@ signals:
 
 private:
 	TileMap* tile_map;
+    bool collided;
 };
+#endif

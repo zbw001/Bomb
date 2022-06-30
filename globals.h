@@ -26,15 +26,24 @@ namespace Consts {
 	extern const int VIEW_WIDTH;
 	extern const int VIEW_HEIGHT;
 	extern const int GRAVITY;
+    extern const int EXPLOSION1_SIZE;
+	extern const int NUM_PLAYERS;
+	extern const int NUM_CHARACTERS_PER_PLAYER;
+    extern const double K_KNOCK;
+    extern const double K_HURT;
+    extern const double BLOCK_DAMAGE_DISTANCE;
+    extern const double MU;
 }
 
 namespace Animations {
 	extern Animation* CHARACTER_IDLE;
+    extern Animation* CHARACTER_DIE;
 	extern Animation* BOMB ;
 	extern Animation* START_BUTTON;
 	extern Animation* HPBAR_BACKGROUND;
 	extern Animation* HPBAR_BAR;
 	extern Animation* BLOCKS[];
+    extern Animation* EXPLOSION1;
 }
 
 namespace Scenes {

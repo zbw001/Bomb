@@ -1,4 +1,5 @@
 #include "tile_map.h"
+#include <QVariant>
 #include <QRectF>
 #include <QObject>
 #include <QDebug>
@@ -13,7 +14,7 @@ TileMap::TileMap(QGraphicsItem *parent) : QGraphicsItem(parent) {
         for (int j = 0; j < Consts::TILEMAP_HEIGHT; j++) {
             sprites[QPair<int,int>(i, j)] = nullptr;
             block_type[QPair<int,int>(i, j)] = -1;
-            if (j == 10) { 
+            if (j == 50) {
                 setBlock(i, j, 0);
             }
         }
@@ -39,7 +40,8 @@ void TileMap::setBlock(int x, int y, int b) {
     block_type[QPair<int,int>(x, y)] = b;
     sprites[QPair<int,int>(x, y)] = nullptr;
     if (b != -1) {
-        sprites[QPair<int,int>(x, y)] = new Sprite(static_cast<QGraphicsItem*>(this), *Animations::BLOCKS[b], true, false);
+        sprites[QPair<int,int>(x, y)] = new Sprite(static_cast<QGraphicsItem*>(this), *Animations::BLOCKS[b], false);
+        sprites[QPair<int,int>(x, y)]->setData(0, QVariant("block"));
         sprites[QPair<int,int>(x, y)]->setPos(x * Consts::BLOCK_SIZE, y * Consts::BLOCK_SIZE);
     }
 }
@@ -69,16 +71,17 @@ double TileMap::dis_to_ground(QRectF rect) {
     for (int bx = qMax(0, int (lx / Consts::BLOCK_SIZE - 2)); bx <= rx / Consts::BLOCK_SIZE + 2; bx++) {
         for (int by = qMax(0, int (ly / Consts::BLOCK_SIZE - 2)); by <= ry / Consts::BLOCK_SIZE + 2; by++) {
             if (block_type[QPair<int,int>(bx, by)] != -1) {
+                //qDebug() << bx << " " << by;
                 QRectF brect = sprites[QPair<int,int>(bx, by)]->sceneBoundingRect();
                 //qDebug() <<sprites[QPair<int,int>(bx, by)]->sceneBoundingRect();
-                if (brect.top() + Consts::EPS > rect.bottom())
-                    if (brect.top() - rect.bottom() < Consts::EPS) {
-                        if (qMin(brect.right(), rect.right()) - qMax(brect.left(), rect.left()) > Consts::EPS)
-                            ret = qMin(ret, brect.top() - rect.bottom());
-                    }
+                if (qAbs(brect.top() - rect.bottom()) < Consts::EPS) {
+                    if (qMin(brect.right(), rect.right()) - qMax(brect.left(), rect.left()) > Consts::EPS)
+                        ret = qMin(ret, rect.bottom() - brect.top());
+                }
             }
         }
     }
+    qDebug() << ret;
     return ret;
 }
 

@@ -68,9 +68,62 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
             assets/blocks/dirt.png
             assets/bomb/bomb.png
             assets/character/idle.png
+            assets/character/down.png
+            assets/character/slide.png
             assets/character/hp_background.png
             assets/character/hp_bar.png
             assets/start_button.png
+            assets/bomb/explosion1/1_0.png
+            assets/bomb/explosion1/1_1.png
+            assets/bomb/explosion1/1_2.png
+            assets/bomb/explosion1/1_3.png
+            assets/bomb/explosion1/1_4.png
+            assets/bomb/explosion1/1_5.png
+            assets/bomb/explosion1/1_6.png
+            assets/bomb/explosion1/1_7.png
+            assets/bomb/explosion1/1_8.png
+            assets/bomb/explosion1/1_9.png
+            assets/bomb/explosion1/1_10.png
+            assets/bomb/explosion1/1_11.png
+            assets/bomb/explosion1/1_12.png
+            assets/bomb/explosion1/1_13.png
+            assets/bomb/explosion1/1_14.png
+            assets/bomb/explosion1/1_15.png
+            assets/bomb/explosion1/1_16.png
+            assets/bomb/explosion1/1_17.png
+            assets/bomb/explosion1/1_18.png
+            assets/bomb/explosion1/1_19.png
+            assets/bomb/explosion1/1_20.png
+            assets/bomb/explosion1/1_21.png
+            assets/bomb/explosion1/1_22.png
+            assets/bomb/explosion1/1_23.png
+            assets/bomb/explosion1/1_24.png
+            assets/bomb/explosion1/1_25.png
+            assets/bomb/explosion1/1_26.png
+            assets/bomb/explosion1/1_27.png
+            assets/bomb/explosion1/1_28.png
+            assets/bomb/explosion1/1_29.png
+            assets/bomb/explosion1/1_30.png
+            assets/bomb/explosion1/1_31.png
+            assets/bomb/explosion1/1_32.png
+            assets/bomb/explosion1/1_33.png
+            assets/bomb/explosion1/1_34.png
+            assets/bomb/explosion1/1_35.png
+            assets/bomb/explosion1/1_36.png
+            assets/bomb/explosion1/1_37.png
+            assets/bomb/explosion1/1_38.png
+            assets/bomb/explosion1/1_39.png
+            assets/bomb/explosion1/1_40.png
+            assets/bomb/explosion1/1_41.png
+            assets/bomb/explosion1/1_42.png
+            assets/bomb/explosion1/1_43.png
+            assets/bomb/explosion1/1_44.png
+            assets/bomb/explosion1/1_45.png
+            assets/bomb/explosion1/1_46.png
+            assets/bomb/explosion1/1_47.png
+            assets/bomb/explosion1/1_48.png
+            assets/bomb/explosion1/1_49.png
+
     )
     
 # Define target properties for Android with Qt 6 as:

@@ -13,7 +13,7 @@ OverScene::OverScene(SceneManager* manager) : Scene(manager) {
 	this->setSceneRect(QRect(0, 0, 1600, 900));
     
     
-    button = new Sprite(nullptr, *Animations::START_BUTTON, true, true, "重新开始");
+    button = new Sprite(nullptr, *Animations::START_BUTTON, true, "重新开始");
     button->setPos(350, 400);
     button->setFlag(QGraphicsRectItem::ItemIsFocusable);
     button->setFocus();

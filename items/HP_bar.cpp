@@ -1,9 +1,11 @@
 #include "../globals.h"
 #include "HP_bar.h"
+#include <QPointF>
 
 HPBar::HPBar(QGraphicsItem * parent) : 
-    Sprite(parent, *Animations::HPBAR_BACKGROUND, false, false) {
-    bar = new Sprite(this, *Animations::HPBAR_BAR, false, false);
+    Sprite(parent, *Animations::HPBAR_BACKGROUND, false) {
+    bar = new Sprite(this, *Animations::HPBAR_BAR, false);
+	//bar->setPos(QPointF(0, 0));
 }
 
 HPBar::~HPBar() {

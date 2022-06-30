@@ -1,22 +1,23 @@
 #include "sprite.h"
 #include <QDebug>
+#include <QSizeF>
 
-Sprite::Sprite(QGraphicsItem *parent, const Animation &animation, bool has_shape, bool event_enabled, const QString &text, const QColor &color, const QFont &font) : QGraphicsItem(parent) {
+Sprite::Sprite(QGraphicsItem *parent, const Animation &animation, bool event_enabled, const QString &text, const QColor &color, const QFont &font) : QGraphicsItem(parent) {
     this->setText(text, color, font);
     animations["default"] = animation;
     cur_animation = "";
     this->setAnimation("default");
-    this->has_shape = has_shape;
     this->event_enabled = event_enabled;
+    finished = false;
 }
 
-Sprite::Sprite(QGraphicsItem *parent, const QHash<QString, Animation> &animations, const QString &default_animation, bool has_shape, bool event_enabled, const QString &text, const QColor &color, const QFont &font) : QGraphicsItem(parent) {
+Sprite::Sprite(QGraphicsItem *parent, const QHash<QString, Animation> &animations, const QString &default_animation, bool event_enabled, const QString &text, const QColor &color, const QFont &font) : QGraphicsItem(parent) {
     this->setText(text, color, font);
     this->animations = animations;
     cur_animation = "";
     this->setAnimation(default_animation);
-    this->has_shape = has_shape;
     this->event_enabled = event_enabled;
+    finished = false;
 }
 
 void Sprite::setText(const QString &text, const QColor &color, const QFont &font) {
@@ -29,6 +30,7 @@ void Sprite::setAnimation(const QString &name) {
     if (cur_animation != "") {
         QObject::killTimer(cur_timer);
     }
+    finished = false;
     cur_index = 0;
     assert(animations.contains(name));
     cur_animation = name;
@@ -56,7 +58,6 @@ void Sprite::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 
 QPainterPath Sprite::shape() const {
     QPainterPath path;
-    if (!has_shape) return path;
     path.addRect(boundingRect());
     return path;
 }
@@ -74,6 +75,11 @@ void Sprite::timerEvent(QTimerEvent *e) {
         if (animation.repeat) {
             cur_index = 0;
             update();
+        } else {
+            if (!finished) {
+                finished = true;
+                emit animationFinished();
+            }
         }
     } else {
         cur_index ++;
@@ -85,4 +91,9 @@ QPixmap Sprite::getPixmap() const {
     //qDebug() << cur_animation << " " << cur_index;
     //qDebug() << animations[cur_animation].length();
     return animations[cur_animation][cur_index];
+}
+
+QPointF Sprite::center() {
+    QSizeF size = boundingRect().size();
+    return pos() + QPointF(size.width() / 2.0, size.height() / 2.0);
 }
